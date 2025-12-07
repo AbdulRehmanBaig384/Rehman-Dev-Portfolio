@@ -68,7 +68,6 @@ export default function TechStack() {
     },
     detectRetina: true,
   };
-
   return (
     <motion.section
       id="tech"
@@ -77,17 +76,12 @@ export default function TechStack() {
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       className="relative flex flex-col items-center justify-center w-full py-28 overflow-hidden text-center">
-      {/* Background Gradient */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
-      {/* Particles */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-80">
           <Particles id="techParticles" options={particlesOptions} />
         </div>
       )}
-
-      {/* Heading */}
       <motion.div variants={sectionVariants} className="relative mb-14 text-center">
         <motion.h2
           initial={{ opacity: 0, y: -15 }}
@@ -97,8 +91,6 @@ export default function TechStack() {
           from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl">
           Tech Stack
         </motion.h2>
-
-        {/* Underline Glow */}
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "60%" }}
@@ -113,8 +105,6 @@ export default function TechStack() {
           experiences.
         </p>
       </motion.div>
-
-      {/* Tech Grid */}
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -125,8 +115,7 @@ export default function TechStack() {
           },
         }}
         className="grid w-full max-w-6xl grid-cols-2 sm:grid-cols-3 
-        md:grid-cols-4 lg:grid-cols-5 gap-7"
-      >
+        md:grid-cols-4 lg:grid-cols-5 gap-7">
         {techList.map((tech) => (
           <motion.div
             key={tech}
@@ -137,8 +126,7 @@ export default function TechStack() {
                 y: 0,
                 scale: 1,
                 transition: { duration: 0.45, ease: "easeOut" },
-              },
-            }}
+              }, }}
             whileHover={{
               scale: 1.09,
               y: -6,
@@ -146,15 +134,12 @@ export default function TechStack() {
             }}
             className="flex flex-col items-center justify-center gap-3
             p-5 rounded-2xl glass backdrop-blur-xl 
-           bg-gradient-to-b from-blue-950/50  to-blue-950/20 hover:border-blue-400/60"
-          >
-            {iconMap[tech]} {/* Icon */}
+           bg-gradient-to-b from-blue-950/50  to-blue-950/20 hover:border-blue-400/60">
+            {iconMap[tech]}
             <p className="font-medium text-[var(--text-light)] text-lg">{tech}</p>
           </motion.div>
         ))}
       </motion.div>
-
-      {/* Tagline */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
