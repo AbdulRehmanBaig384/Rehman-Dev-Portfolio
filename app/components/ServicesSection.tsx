@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion,Variants } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { Code, Server, Database, Smartphone } from "lucide-react";
@@ -33,7 +33,7 @@ const services = [
   },
 ];
 
-const containerVariants = {
+const containerVariants:Variants = {
   hidden: {},
   show: {
     transition: {
@@ -42,7 +42,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants:Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   show: {
     opacity: 1,
@@ -67,14 +67,14 @@ const ServicesSection: React.FC = () => {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+      events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
       modes: { repulse: { distance: 100, duration: 0.4 } },
     },
     particles: {
       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
       links: { color: "#00d4ff", distance: 130, enable: true, opacity: 0.25, width: 1 },
       move: { enable: true, speed: 1.3, direction: "none", outModes: { default: "bounce" } },
-      number: { density: { enable: true, area: 800 }, value: 70 },
+      number: { density: { enable: true, factor: 800 } as any, value: 70 },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },

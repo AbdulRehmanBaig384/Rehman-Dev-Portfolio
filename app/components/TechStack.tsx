@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { 
@@ -10,7 +10,7 @@ import {
 } from "react-icons/si";
 
 // ICON MAP
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactElement> = {
   "React": <SiReact className="text-[#61dafb]" size={38} />,
   "React Native": <SiReact className="text-[#61dafb]" size={38} />,
   "Next.js": <SiNextdotjs className="text-white" size={38} />,
@@ -26,7 +26,7 @@ const iconMap: Record<string, JSX.Element> = {
 
 const techList = Object.keys(iconMap);
 
-const sectionVariants = {
+const sectionVariants :Variants= {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -50,7 +50,7 @@ export default function TechStack() {
     interactivity: {
       events: {
         onHover: { enable: true, mode: "repulse" },
-        resize: true,
+        resize:{ enable:true,}
       },
       modes: { repulse: { distance: 100, duration: 0.4 } },
     },
@@ -64,7 +64,7 @@ export default function TechStack() {
         width: 1,
       },
       move: { enable: true, speed: 1.3 },
-      number: { density: { enable: true, area: 800 }, value: 60 },
+      number: { density: { enable: true, factor: 800 } as any, value: 60 },
       opacity: { value: 0.4 },
       size: { value: { min: 1, max: 3 } },
     },

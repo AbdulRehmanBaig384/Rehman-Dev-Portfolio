@@ -20,7 +20,7 @@ export default function Contact() {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+      events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
       modes: { repulse: { distance: 120, duration: 0.4 } },
     },
     particles: {

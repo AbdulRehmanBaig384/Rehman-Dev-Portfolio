@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
       events: {
         onHover: { enable: true, mode: "repulse" },
         onClick: { enable: true, mode: "push" },
-        resize: true,
+        resize:{enable: true,}
       },
       modes: {
         repulse: { distance: 120, duration: 0.4 },
@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
         straight: false,
         outModes: { default: "bounce" },
       },
-      number: { density: { enable: true, area: 800 }, value: 80 },
+      number: { density: { enable: true, factor: 800 } as any, value: 80 },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },

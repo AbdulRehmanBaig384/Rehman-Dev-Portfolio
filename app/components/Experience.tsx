@@ -22,7 +22,7 @@ export default function ExperiencePage() {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+      events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
       modes: { repulse: { distance: 100, duration: 0.4 } },
     },
     particles: {
@@ -40,7 +40,7 @@ export default function ExperiencePage() {
         direction: "none",
         outModes: { default: "bounce" },
       },
-      number: { density: { enable: true, area: 800 }, value: 70 },
+      number: { density: { enable: true, factor: 800 } as any , value: 70 },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },

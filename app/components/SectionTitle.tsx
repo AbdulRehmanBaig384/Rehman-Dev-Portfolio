@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 type Props = {
   title: string;
   subtitle?: string;
+   centered?: boolean;
 };
 
-export default function SectionTitle({ title, subtitle }: Props) {
+export default function SectionTitle({ title, subtitle,centered }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

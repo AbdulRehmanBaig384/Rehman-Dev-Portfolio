@@ -18,8 +18,9 @@ import TechStack from "./components/TechStack";
 import Education from "./components/Education";
 import ExperiencePage from "./components/Experience";
 import Contact from "./components/Contact";
-import IntroScreen from "./components/IntoScreen";
+import IntroScreen from "./components/IntroScreen";
 import SocialSidebar from "./components/SocialSiderbar";
+
 // Sections for left dots
 const SECTIONS = [
   { id: "hero" },
@@ -33,32 +34,62 @@ const SECTIONS = [
 ];
 
 export default function Home() {
-  const [init, setInit] = useState(false);
+  // const [init, setInit] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
   // particle setup
-  const particlesInit = async (main: any) => {
-    await loadSlim(main);
-    setInit(true);
-  };
+  // const particlesInit = async (main: any) => {
+  //   await loadSlim(main);
+  //   setInit(true);
+  // };
+
+  const [particlesLoaded, setParticlesLoaded] = useState(false);
+
+// useEffect(() => {
+//   loadSlim().then(() => setParticlesLoaded(true));
+// }, []);
+
+
+
+  // const particlesOptions = {
+  //   background: { color: { value: "transparent" } },
+  //   fpsLimit: 120,
+  //   interactivity: {
+  //     events: { onHover: { enable: true, mode: "repulse" }, resize: {enable:true }},
+  //     modes: { repulse: { distance: 120, duration: 0.4 } },
+  //   },
+  //   particles: {
+  //     color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
+  //     links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
+  //     move: { enable: true, speed: 1.2, outModes: { default: "bounce" as const } },
+  //     number: { density: { enable: true, factor: 800 } as any, value: 80 },
+  //     opacity: { value: 0.5 },
+  //     shape: { type: "circle" },
+  //     size: { value: { min: 1, max: 3 } },
+  //   },
+  //   detectRetina: true,
+  // };
 
   const particlesOptions = {
-    background: { color: { value: "transparent" } },
-    fpsLimit: 120,
-    interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-      modes: { repulse: { distance: 120, duration: 0.4 } },
+  background: { color: { value: "transparent" } },
+  fpsLimit: 120,
+  interactivity: {
+    events: {
+      onHover: { enable: true, mode: "repulse" },
+      resize: { enable: true },
     },
-    particles: {
-      color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
-      links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
-      move: { enable: true, speed: 1.2, outModes: { default: "bounce" } },
-      number: { density: { enable: true, area: 800 }, value: 80 },
-      opacity: { value: 0.5 },
-      shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } },
-    },
-    detectRetina: true,
-  };
+    modes: { repulse: { distance: 120, duration: 0.4 } },
+  },
+  particles: {
+    color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
+    links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
+    move: { enable: true, speed: 1.2, outModes: {default:"bounce" } as const }, // <-- changed here
+    number: { density: { enable: true, area: 800 }, value: 80 },
+    opacity: { value: 0.5 },
+    shape: { type: "circle" },
+    size: { value: { min: 1, max: 3 } },
+  },
+  detectRetina: true,
+};
 
   /* --------------------------- LEFT SIDE DOTS --------------------------- */
   const [activeSection, setActiveSection] = useState("hero");
@@ -98,7 +129,9 @@ export default function Home() {
           className="relative z-10"
         ></motion.div>)}
       {/* Particles Background */}
-      <Particles id="particles-bg" init={particlesInit} options={particlesOptions} />
+      {/* <Particles id="particles-bg" init={particlesInit} options={particlesOptions} /> */}
+      {particlesLoaded && <Particles id="particles-bg" options={particlesOptions} />}
+
 
       {/* ---------------- LEFT SIDE DOT INDICATORS ---------------- */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
@@ -116,7 +149,7 @@ export default function Home() {
           />
         ))}
       </div>
-        <IntroScreen/>
+
       {/* Navbar */}
       <Navbar />
 
@@ -146,7 +179,7 @@ export default function Home() {
       </section>
 
       <section id="projects">
-        <ProjectCard projects={projects} />
+        <ProjectCard  />
       </section>
 
       <section id="contact">
@@ -310,3 +343,4 @@ export default function Home() {
 //     </motion.main>
 //   );
 // }
+``
