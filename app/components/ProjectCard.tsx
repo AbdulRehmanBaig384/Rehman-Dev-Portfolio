@@ -29,7 +29,6 @@ export default function ProjectsPage() {
     }).then(() => setInit(true));
   }, []);
 
-  // Particle Config
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
@@ -48,7 +47,6 @@ export default function ProjectsPage() {
     },
     detectRetina: true,
   };
-
   const projects :Project[]= [
     {
       title: "ShopEase – E-commerce Website",
@@ -60,7 +58,7 @@ export default function ProjectsPage() {
     },
       {
     title: "Voice ToDo MERN App",
-    img: voicetodo.src, // Add the image in your public folder
+    img: voicetodo.src, 
     desc: "A full-stack MERN ToDo app with voice commands. Users can add, update, and delete tasks using voice input, with real-time MongoDB storage.",
     github: "https://github.com/AbdulRehmanBaig384/Voice-Todo-Mern",
     deploy: "https://voice-todo-mern.vercel.app",
@@ -102,7 +100,7 @@ export default function ProjectsPage() {
       title: "PostAutoPilot",
       img: "/postautopilot.jpg",
       desc: "A React Native automation app for scheduling posts, generating captions, analytics, and smart posting recommendations.",
-      github: "https://github.com/yourusername/postautopilot",
+      github: "In Progress",
       deploy: "",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
