@@ -9,7 +9,6 @@ import {
   SiPostgresql, SiDocker, SiTailwindcss, SiGit 
 } from "react-icons/si";
 
-// ICON MAP
 const iconMap: Record<string, React.ReactElement> = {
   "React": <SiReact className="text-[#61dafb]" size={38} />,
   "React Native": <SiReact className="text-[#61dafb]" size={38} />,
@@ -25,7 +24,6 @@ const iconMap: Record<string, React.ReactElement> = {
 };
 
 const techList = Object.keys(iconMap);
-
 const sectionVariants :Variants= {
   hidden: { opacity: 0, y: 30 },
   show: {
@@ -78,8 +76,7 @@ export default function TechStack() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative flex flex-col items-center justify-center w-full py-28 overflow-hidden text-center"
-    >
+      className="relative flex flex-col items-center justify-center w-full py-28 overflow-hidden text-center">
       {/* Background Gradient */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
 
@@ -97,8 +94,7 @@ export default function TechStack() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-5xl font-extrabold bg-gradient-to-r 
-          from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl"
-        >
+          from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl">
           Tech Stack
         </motion.h2>
 
@@ -166,8 +162,7 @@ export default function TechStack() {
         className="inline-flex items-center justify-center px-6 py-3 mt-16 text-lg 
         font-medium rounded-full bg-gradient-to-r 
         from-[#60a5fa]/20 via-[#7c3aed]/20 to-[#00d4ff]/20 
-        backdrop-blur-xl border border-white/10 shadow-lg cursor-default"
-      >
+        backdrop-blur-xl border border-white/10 shadow-lg cursor-default">
         Powering My Development Journey 
       </motion.div>
     </motion.section>
