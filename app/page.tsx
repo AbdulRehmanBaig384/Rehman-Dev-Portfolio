@@ -1,65 +1,312 @@
+
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import SectionTitle from "./components/SectionTitle";
+import TechBadge from "./components/TechBadge";
+import ProjectCard from "./components/ProjectCard";
+import projects from "./data/projects";
+import ServicesSection from "./components/ServicesSection";
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import About from "./components/About";
+import TechStack from "./components/TechStack";
+import Education from "./components/Education";
+import ExperiencePage from "./components/Experience";
+import Contact from "./components/Contact";
+import IntroScreen from "./components/IntoScreen";
+import SocialSidebar from "./components/SocialSiderbar";
+// Sections for left dots
+const SECTIONS = [
+  { id: "hero" },
+  { id: "about" },
+  { id: "tech" },
+  { id: "education" },
+  { id: "experience" },
+  { id: "services" },
+  { id: "projects" },
+  { id: "contact" },
+];
 
 export default function Home() {
+  const [init, setInit] = useState(false);
+  const [introFinished, setIntroFinished] = useState(false);
+  // particle setup
+  const particlesInit = async (main: any) => {
+    await loadSlim(main);
+    setInit(true);
+  };
+
+  const particlesOptions = {
+    background: { color: { value: "transparent" } },
+    fpsLimit: 120,
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+      modes: { repulse: { distance: 120, duration: 0.4 } },
+    },
+    particles: {
+      color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
+      links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
+      move: { enable: true, speed: 1.2, outModes: { default: "bounce" } },
+      number: { density: { enable: true, area: 800 }, value: 80 },
+      opacity: { value: 0.5 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 3 } },
+    },
+    detectRetina: true,
+  };
+
+  /* --------------------------- LEFT SIDE DOTS --------------------------- */
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { threshold: 0.55 }
+    );
+
+    SECTIONS.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <motion.main
+      initial="hidden"
+      animate="enter"
+      className="relative min-h-screen overflow-hidden text-white scroll-smooth"
+    >
+        {!introFinished && <IntroScreen onFinish={() => setIntroFinished(true)} />}
+
+     {/* Render Portfolio After Intro */}
+       {introFinished && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="relative z-10"
+        ></motion.div>)}
+      {/* Particles Background */}
+      <Particles id="particles-bg" init={particlesInit} options={particlesOptions} />
+
+      {/* ---------------- LEFT SIDE DOT INDICATORS ---------------- */}
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+        {SECTIONS.map((s) => (
+          <button
+            key={s.id}
+            onClick={() =>
+              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" })
+            }
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              activeSection === s.id
+                ? "bg-[#00d4ff] scale-150 shadow-[0_0_15px_rgba(0,212,255,0.7)]"
+                : "bg-gray-500/60 hover:scale-110"
+            }`}
+          />
+        ))}
+      </div>
+        <IntroScreen/>
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Hero Section */}
+      <section id="hero">
+        <HeroSection />
+      </section>
+      <SocialSidebar/>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="tech">
+        <TechStack />
+      </section>
+
+      <section id="education">
+        <Education />
+      </section>
+
+      <section id="experience">
+        <ExperiencePage />
+      </section>
+         <section id="services">
+        <ServicesSection />
+      </section>
+
+      <section id="projects">
+        <ProjectCard projects={projects} />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+    </motion.main>
   );
 }
+
+
+
+
+
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import { motion } from "framer-motion";
+// import Particles from "@tsparticles/react";
+// import { loadSlim } from "@tsparticles/slim";
+
+// import Navbar from "./components/Navbar";
+// import HeroSection from "./components/HeroSection";
+// import About from "./components/About";
+// import ServicesSection from "./components/ServicesSection";
+// import TechStack from "./components/TechStack";
+// import Education from "./components/Education";
+// import ExperiencePage from "./components/Experience";
+// import ProjectCard from "./components/ProjectCard";
+// import Contact from "./components/Contact";
+// import IntroScreen from "./components/IntoScreen";
+// import projects from "./data/projects";
+
+
+// // 🚀 Sections for Left Dots
+// const SECTIONS = [
+//   "hero",
+//   "about",
+//   "services",
+//   "tech",
+//   "education",
+//   "experience",
+//   "projects",
+//   "contact",
+// ];
+
+// export default function Home() {
+//   const [introFinished, setIntroFinished] = useState(false);
+//   const [activeSection, setActiveSection] = useState("hero");
+//   const [init, setInit] = useState(false);
+
+//   // Particle Background Loader
+//   const particlesInit = async (main: any) => {
+//     await loadSlim(main);
+//     setInit(true);
+//   };
+
+//   // Particles Config
+//   const particlesOptions = {
+//     background: { color: { value: "transparent" } },
+//     fpsLimit: 120,
+//     interactivity: {
+//       events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+//       modes: { repulse: { distance: 120, duration: 0.4 } },
+//     },
+//     particles: {
+//       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
+//       links: { enable: true, color: "#00d4ff", opacity: 0.3, distance: 140 },
+//       move: { enable: true, speed: 1.2 },
+//       number: { value: 70 },
+//       shape: { type: "circle" },
+//     },
+//   };
+
+//   // 📌 Section Scroll Tracker (Fix)
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             setActiveSection(entry.target.id);
+//           }
+//         });
+//       },
+//       { threshold: 0.35 } // Best for portfolio sizing
+//     );
+
+//     SECTIONS.forEach((id) => {
+//       const el = document.getElementById(id);
+//       if (el) observer.observe(el);
+//     });
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   return (
+//     <motion.main className="relative min-h-screen overflow-x-hidden text-white scroll-smooth">
+
+//       {/* Intro Animation */}
+//       {!introFinished && <IntroScreen onFinish={() => setIntroFinished(true)} />}
+
+//       {/* Render Portfolio After Intro */}
+//       {introFinished && (
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 1.2 }}
+//           className="relative z-10"
+//         >
+//           {/* 🔹 Background Particles */}
+//           <Particles id="particles" init={particlesInit} options={particlesOptions}
+//             className="absolute inset-0 -z-10"
+//           />
+
+//           {/* 🔹 Left Scroll Navigation Dots */}
+//           {/* <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+//             {SECTIONS.map((id) => (
+//               <button
+//                 key={id}
+//                 onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
+//                 className={`w-3 h-3 rounded-full transition-all duration-300 
+//                   ${activeSection === id 
+//                     ? "bg-[#00d4ff] scale-150 shadow-[0_0_15px_rgba(0,212,255,0.7)]" 
+//                     : "bg-gray-500/60 hover:scale-110"
+//                   }`}
+//               />
+//             ))}
+//           </div> */}
+
+
+//            <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
+//         {SECTIONS.map((s) => (
+//           <button
+//             key={s}
+//             onClick={() =>
+//               document.getElementById(s)?.scrollIntoView({ behavior: "smooth" })
+//             }
+//             className={`w-3 h-3 rounded-full transition-all duration-300 ${
+//               activeSection === s
+//                 ? "bg-[#00d4ff] scale-150 shadow-[0_0_15px_rgba(0,212,255,0.7)]"
+//                 : "bg-gray-500/60 hover:scale-110"
+//             }`}
+//           />
+//         ))}
+//       </div>
+
+//           {/* 🔹 Navbar */}
+//           <Navbar />
+
+//           {/* Sections */}
+//           <section id="hero"><HeroSection /></section>
+//           <section id="about"><About /></section>
+//           <section id="services"><ServicesSection /></section>
+//           <section id="tech"><TechStack /></section>
+//           <section id="education"><Education /></section>
+//           <section id="experience"><ExperiencePage /></section>
+//           <section id="projects"><ProjectCard projects={projects} /></section>
+//           <section id="contact"><Contact /></section>
+
+//         </motion.div>
+//       )}
+//     </motion.main>
+//   );
+// }

@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.glow-btn {
+  position: relative;
+  background: linear-gradient(90deg, #007bff, #00e0ff);
+  border-radius: 9999px;
+  padding: 0.6rem 1.5rem;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.neon-border {
+  border-image: linear-gradient(45deg, #00e5ff, #7c3aed, #00d4ff) 1;
+  animation: neonMove 4s linear infinite;
+}
+
+@keyframes neonMove {
+  0% { border-image: linear-gradient(45deg, #00e5ff, #7c3aed, #00d4ff) 1; }
+  50% { border-image: linear-gradient(45deg, #7c3aed, #00d4ff, #00e5ff) 1; }
+  100% { border-image: linear-gradient(45deg, #00e5ff, #7c3aed, #00d4ff) 1; }
+}
