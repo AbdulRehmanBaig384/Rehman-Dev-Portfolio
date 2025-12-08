@@ -61,7 +61,6 @@ export default function Contact() {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
       className="relative flex flex-col items-center justify-center py-24 text-white overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-black via-blue-950/40 to-black" />
       {/* Particles */}
       {init && (
@@ -69,7 +68,6 @@ export default function Contact() {
           <Particles id="contactParticles" options={particlesOptions} />
         </div>
       )}
-      {/* Heading */}
       <SectionTitle title="Contact" subtitle="Let's work together" centered />
       {/* Form Container */}
       <motion.div
@@ -86,19 +84,12 @@ export default function Contact() {
         <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
 
           <div>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your Name"
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name"
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all" />
           </div>
 
           <div>
-            <input type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com"
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"/>
           </div>
 
