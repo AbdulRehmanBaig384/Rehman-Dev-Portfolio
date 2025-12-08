@@ -95,37 +95,24 @@ export default function Contact() {
           </div>
 
           <div>
-            <input
-              type="email"
+            <input type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"
-            />
+              className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"/>
           </div>
 
           <div>
-            <textarea
-              rows={4}
-              value={msg}
-              onChange={(e) => setMsg(e.target.value)}
-              placeholder="Write your message..."
+            <textarea rows={4} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="Write your message..."
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"
             ></textarea>
           </div>
 
           {/* BUTTON */}
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="
-              w-full py-3 mt-4 font-semibold text-white
-              rounded-full bg-gradient-to-r from-blue-950/50 via-black to-blue-950/20
-              shadow-[0_0_20px_rgba(0,200,255,0.35)]
-              hover:shadow-[0_0_30px_rgba(0,200,255,0.55)]
-              transition-all">
-            {submitted ? "✔ Message Sent!" : "Send Message"}
+          <motion.button type="submit"  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
+            className="  w-full py-3 mt-4 font-semibold text-white rounded-full bg-gradient-to-r from-blue-950/50 via-black to-blue-950/20
+              shadow-[0_0_20px_rgba(0,200,255,0.35)] hover:shadow-[0_0_30px_rgba(0,200,255,0.55)] transition-all">
+            {submitted ? " Message Sent!" : "Send Message"}
           </motion.button>
         </form>
       </motion.div>
