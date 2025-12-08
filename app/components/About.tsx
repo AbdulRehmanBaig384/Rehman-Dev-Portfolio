@@ -60,7 +60,6 @@ export default function About() {
           meaningful impact through innovation and collaboration.
         </p>
 
-        {/*  Animated Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
@@ -68,9 +67,7 @@ export default function About() {
           Let’s Connect 
         </motion.button>
       
-      </motion.div>
-      {/* Animated Bottom Glow Line */}
- 
+      </motion.div> 
     </motion.section>
   );
 }
