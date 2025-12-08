@@ -40,12 +40,10 @@ export default function Contact() {
     },
     detectRetina: true,
   };
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
   function handleSubmit(e: any) {
     e.preventDefault();
     if (!name || !email || !msg) return;
@@ -55,7 +53,6 @@ export default function Contact() {
     setEmail("");
     setMsg("");
   }
-
   return (
     <motion.section
       id="contact"
