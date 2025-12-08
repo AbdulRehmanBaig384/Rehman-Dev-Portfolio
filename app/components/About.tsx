@@ -1,4 +1,3 @@
-
 "use client";
 import { motion,Variants } from "framer-motion";
 
@@ -18,7 +17,6 @@ export default function About() {
         initial="hidden"
       whileInView="show"
      className="relative flex flex-col items-center justify-center pt-20 overflow-hidden text-center">
-      {/*  Full-page glowing gradient background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
 
       {/*  Section Heading */}
