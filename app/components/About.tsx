@@ -27,14 +27,13 @@ export default function About() {
           className=" mb-8 text-5xl font-extrabold bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl">
         About Me
       </motion.h2>
-      {/*  Paragraph Content - now full width and elegant */}
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-5xl px-6 text-center md:px-10 lg:px-20"
-      >
+        className="max-w-5xl px-6 text-center md:px-10 lg:px-20">
         <p className="mb-6 text-base leading-relaxed text-zinc-300 md:text-lg">
           Hi 👋 I’m{" "}
           <span className="font-semibold text-cyan-400">Abdul Rehman Baig</span>, a
