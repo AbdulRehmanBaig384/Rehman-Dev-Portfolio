@@ -78,7 +78,6 @@ export default function Contact() {
         transition={{ duration: 0.6 }}
         className=" w-full max-w-2xl px-8 py-10 mt-10 rounded-3xl backdrop-blur-xl glass  border border-cyan-400/30 shadow-[0_0_30px_rgba(0,200,255,0.25)]
           bg-white/5 relative overflow-hidden">
-        {/* Neon Border Glow */}
         <div className="absolute inset-0 rounded-3xl pointer-events-none border border-transparent">
           <div className="absolute inset-0 rounded-3xl border-2 border-transparent neon-border"></div>
         </div>
@@ -92,8 +91,7 @@ export default function Contact() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your Name"
-              className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"
-            />
+              className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all" />
           </div>
 
           <div>
