@@ -71,16 +71,12 @@ export default function Contact() {
       )}
       {/* Heading */}
       <SectionTitle title="Contact" subtitle="Let's work together" centered />
-
       {/* Form Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="
-          w-full max-w-2xl px-8 py-10 mt-10 
-          rounded-3xl backdrop-blur-xl glass 
-          border border-cyan-400/30 shadow-[0_0_30px_rgba(0,200,255,0.25)]
+        className=" w-full max-w-2xl px-8 py-10 mt-10 rounded-3xl backdrop-blur-xl glass  border border-cyan-400/30 shadow-[0_0_30px_rgba(0,200,255,0.25)]
           bg-white/5 relative overflow-hidden">
         {/* Neon Border Glow */}
         <div className="absolute inset-0 rounded-3xl pointer-events-none border border-transparent">
@@ -89,7 +85,7 @@ export default function Contact() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
-          {/* INPUTS */}
+
           <div>
             <input
               type="text"
