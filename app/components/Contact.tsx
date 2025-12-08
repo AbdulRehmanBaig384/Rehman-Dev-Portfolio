@@ -60,18 +60,15 @@ export default function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
-      className="relative flex flex-col items-center justify-center py-24 text-white overflow-hidden"
-    >
+      className="relative flex flex-col items-center justify-center py-24 text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-black via-blue-950/40 to-black" />
-
       {/* Particles */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-70">
           <Particles id="contactParticles" options={particlesOptions} />
         </div>
       )}
-
       {/* Heading */}
       <SectionTitle title="Contact" subtitle="Let's work together" centered />
 
@@ -84,9 +81,7 @@ export default function Contact() {
           w-full max-w-2xl px-8 py-10 mt-10 
           rounded-3xl backdrop-blur-xl glass 
           border border-cyan-400/30 shadow-[0_0_30px_rgba(0,200,255,0.25)]
-          bg-white/5 relative overflow-hidden
-        "
-      >
+          bg-white/5 relative overflow-hidden">
         {/* Neon Border Glow */}
         <div className="absolute inset-0 rounded-3xl pointer-events-none border border-transparent">
           <div className="absolute inset-0 rounded-3xl border-2 border-transparent neon-border"></div>
