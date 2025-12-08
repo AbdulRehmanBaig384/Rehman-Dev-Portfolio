@@ -124,9 +124,7 @@ export default function Contact() {
               rounded-full bg-gradient-to-r from-blue-950/50 via-black to-blue-950/20
               shadow-[0_0_20px_rgba(0,200,255,0.35)]
               hover:shadow-[0_0_30px_rgba(0,200,255,0.55)]
-              transition-all
-            "
-          >
+              transition-all">
             {submitted ? "✔ Message Sent!" : "Send Message"}
           </motion.button>
         </form>
@@ -134,4 +132,3 @@ export default function Contact() {
     </motion.section>
   );
 }
-
