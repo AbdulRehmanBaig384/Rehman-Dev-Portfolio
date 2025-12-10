@@ -27,7 +27,6 @@ const education = [
     details: "Completed secondary education with a strong foundation in science.",
   },
 ];
-
 export default function Education() {
   const [init, setInit] = useState(false);
 
@@ -36,8 +35,6 @@ export default function Education() {
       setInit(true)
     );
   }, []);
-
-  // Particle Config
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     particles: {
