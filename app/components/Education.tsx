@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -29,7 +28,6 @@ const education = [
 ];
 export default function Education() {
   const [init, setInit] = useState(false);
-
   useEffect(() => {
     initParticlesEngine(async (engine) => await loadSlim(engine)).then(() =>
       setInit(true)
@@ -78,7 +76,6 @@ export default function Education() {
     className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
 
 </div>
-{/* Quote */}
 <motion.p
   className="mt-0 text-gray-300 italic text-lg max-w-xl mx-auto -mt-10"
   initial={{ opacity: 0, y: -10 }}
@@ -86,11 +83,7 @@ export default function Education() {
   transition={{ delay: 0.2, duration: 0.7 }}>
   Education is the most powerful weapon which you can use to change the world. – Nelson Mandela
 </motion.p>
-
-      {/* Timeline Wrapper */}
       <div className="relative max-w-5xl mx-auto px-6">
-        
-        {/* Center glowing line */}
         <div
           className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 
           bg-gradient-to-b from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] 
