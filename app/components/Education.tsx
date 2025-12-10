@@ -123,9 +123,7 @@ export default function Education() {
               <motion.div
                 whileHover={{ rotateX: 8, rotateY: i % 2 === 0 ? -8 : 8, scale: 1.04 }}
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                className="glass rounded-2xl mb-6 p-6 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow backdrop-blur-sm
-                "
-              >
+                className="glass rounded-2xl mb-6 p-6 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-[#7ab4ff]">
                   {edu.title}
                 </h3>
