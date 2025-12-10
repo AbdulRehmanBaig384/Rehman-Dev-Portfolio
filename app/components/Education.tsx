@@ -106,18 +106,14 @@ export default function Education() {
               className={`relative md:w-1/2 group ${
                 i % 2 === 0
                   ? "ml-auto pr-12 text-right"
-                  : "mr-auto pl-12 text-left"
-              }`}
-            >
+                  : "mr-auto pl-12 text-left" }`}>
               {/* Dot pulse */}
               <div
                 className="absolute top-4 w-6 h-6 rounded-full 
                 bg-gradient-to-br from-[#00d4ff] to-[#7c3aed] 
                 shadow-[0_0_25px_#00d4ff]  
-                animate-ping-slow"
-              />
-
-              {/* 3D Card */}
+                animate-ping-slow"/>
+          
               <motion.div
                 whileHover={{ rotateX: 8, rotateY: i % 2 === 0 ? -8 : 8, scale: 1.04 }}
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
