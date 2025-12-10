@@ -55,8 +55,7 @@ export default function Education() {
       viewport={{ once: true }}
       className="relative py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20"></div>
-
-      {/* Particles */}
+      {/*Particles movmemnt  */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-70">
           <Particles id="eduParticles" options={particlesOptions} />
@@ -64,13 +63,10 @@ export default function Education() {
       )}      
       {/* Heading Wrapper */}
 <div className="relative w-fit mx-auto mb-20">
-
   <motion.h2
     className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed]"
-    initial={{ opacity: 0, y: -20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.7 }}
-  >
+    initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}>
     Education 🎓
   </motion.h2>
 
