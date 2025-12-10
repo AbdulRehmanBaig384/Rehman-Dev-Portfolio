@@ -75,22 +75,17 @@ export default function Education() {
     initial={{ width: 0 }}
     whileInView={{ width: "100%" }}
     transition={{ duration: 0.8, ease: "easeInOut" }}
-    className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"
-  />
+    className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
 
 </div>
-
 {/* Quote */}
 <motion.p
   className="mt-0 text-gray-300 italic text-lg max-w-xl mx-auto -mt-10"
   initial={{ opacity: 0, y: -10 }}
   whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2, duration: 0.7 }}
->
+  transition={{ delay: 0.2, duration: 0.7 }}>
   Education is the most powerful weapon which you can use to change the world. – Nelson Mandela
 </motion.p>
-
-      
 
       {/* Timeline Wrapper */}
       <div className="relative max-w-5xl mx-auto px-6">
