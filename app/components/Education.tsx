@@ -61,7 +61,7 @@ export default function Education() {
           <Particles id="eduParticles" options={particlesOptions} />
         </div>
       )}      
-      {/* Heading Wrapper */}
+      {/*heading  */}
 <div className="relative w-fit mx-auto mb-20">
   <motion.h2
     className="text-5xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed]"
@@ -94,9 +94,7 @@ export default function Education() {
         <div
           className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 
           bg-gradient-to-b from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] 
-          animate-pulse opacity-60 shadow-[0_0_35px_#00d4ff]"
-        />
-
+          animate-pulse opacity-60 shadow-[0_0_35px_#00d4ff]"/>
         <div className="space-y-16">
           {education.map((edu, i) => (
             <motion.div
