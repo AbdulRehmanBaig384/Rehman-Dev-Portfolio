@@ -46,7 +46,6 @@ export default function Education() {
       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
     },
   };
-
   return (
     <motion.section
       id="education"
@@ -54,9 +53,7 @@ export default function Education() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative py-24 overflow-hidden text-white"
-    >
-      {/* Background gradient */}
+      className="relative py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20"></div>
 
       {/* Particles */}
