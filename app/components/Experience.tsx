@@ -103,7 +103,6 @@ export default function ExperiencePage() {
               className={`relative md:w-1/2 ${
                 i % 2 === 0 ? "ml-auto pr-10" : "mr-auto pl-10"
               }`}>
-              {/* Dot indicator */}
               <div
                 className={`absolute top-3 w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} shadow-[0_0_30px_rgba(0,183,255,0.6)] border border-white/20`}/>
               {/* Card */}
@@ -123,13 +122,10 @@ export default function ExperiencePage() {
           ))}
         </div>
       </div>
-
-      {/* ====== Floating Glow Divider ====== */}
       <motion.div
         animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"
-      />
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
     </motion.section>
   );
 }
