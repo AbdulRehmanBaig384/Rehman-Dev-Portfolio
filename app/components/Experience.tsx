@@ -1,6 +1,4 @@
-
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -10,7 +8,6 @@ import type { ISourceOptions } from "@tsparticles/engine";
 export default function ExperiencePage() {
   const [init, setInit] = useState(false);
 
-  //  Initialize particles (same as Contact)
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
