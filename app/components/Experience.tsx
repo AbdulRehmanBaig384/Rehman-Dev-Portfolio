@@ -65,20 +65,16 @@ export default function ExperiencePage() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white"
-    >
-      {/*  Background (same as Contact) */}
+      className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
-      {/*  Particles (animated background) */}
+    {/*Particles movement  */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-80">
           <Particles id="experienceParticles" options={particlesOptions} />
         </div>
       )}
       
-
-      {/* ====== Section Heading ====== */}
+      {/* heading */}
       <motion.div
         className="relative mt-10 mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -87,8 +83,6 @@ export default function ExperiencePage() {
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
           Experience 💼
         </h2>
-
-        {/*  Animated underline  */}
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80%" }}
