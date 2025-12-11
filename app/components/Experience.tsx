@@ -83,8 +83,7 @@ export default function ExperiencePage() {
         className="relative mt-10 mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
+        transition={{ duration: 0.7 }}>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
           Experience 💼
         </h2>
@@ -94,8 +93,7 @@ export default function ExperiencePage() {
           initial={{ width: 0 }}
           whileInView={{ width: "80%" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"
-        />
+          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
 
       {/* ====== Timeline ====== */}
@@ -112,19 +110,15 @@ export default function ExperiencePage() {
               viewport={{ once: true }}
               className={`relative md:w-1/2 ${
                 i % 2 === 0 ? "ml-auto pr-10" : "mr-auto pl-10"
-              }`}
-            >
+              }`}>
               {/* Dot indicator */}
               <div
-                className={`absolute top-3 w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} shadow-[0_0_30px_rgba(0,183,255,0.6)] border border-white/20`}
-              />
-
+                className={`absolute top-3 w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} shadow-[0_0_30px_rgba(0,183,255,0.6)] border border-white/20`}/>
               {/* Card */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 120, damping: 12 }}
-                className="glass rounded-2xl mb-6 p-6 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow "
-              >
+                className="glass rounded-2xl mb-6 p-6 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow ">
                 <h3 className="text-2xl font-semibold text-[#60a5fa] mb-1">
                   {exp.title}
                 </h3>
