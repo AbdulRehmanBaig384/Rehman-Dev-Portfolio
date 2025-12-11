@@ -75,8 +75,7 @@ export default function ExperiencePage() {
       )}
       
       {/* heading */}
-      <motion.div
-        className="relative mt-10 mb-16 text-center"
+      <motion.div className="relative mt-10 mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}>
@@ -90,7 +89,6 @@ export default function ExperiencePage() {
           className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
 
-      {/* ====== Timeline ====== */}
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] bg-gradient-to-b from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] h-full opacity-50" />
 
