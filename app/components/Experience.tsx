@@ -13,8 +13,6 @@ export default function ExperiencePage() {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
-
-  //  Particle configuration
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
