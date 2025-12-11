@@ -42,7 +42,6 @@ export default function ExperiencePage() {
     },
     detectRetina: true,
   };
-
   const experiences = [
     {
       title: "Intern — HZTech",
@@ -59,7 +58,6 @@ export default function ExperiencePage() {
       gradient: "from-[#7c3aed] to-[#00e0ff]",
     },
   ];
-
   return (
     <motion.section
       id="experience"
