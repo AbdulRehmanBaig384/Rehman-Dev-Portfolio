@@ -67,8 +67,6 @@ export default function Education() {
     transition={{ duration: 0.7 }}>
     Education 🎓
   </motion.h2>
-
-  {/* Animated line under heading */}
   <motion.div
     initial={{ width: 0 }}
     whileInView={{ width: "100%" }}
