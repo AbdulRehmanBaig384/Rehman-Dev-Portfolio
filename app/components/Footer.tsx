@@ -64,7 +64,6 @@ export default function Footer() {
             Full-Stack Developer | React | Node.js | MongoDB
           </p>
         </motion.div>
-        {/* Center Navigation */}
         <motion.ul
           className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
           initial={{ opacity: 0 }}
@@ -81,13 +80,10 @@ export default function Footer() {
                 className="relative z-10 px-2 py-1 transition-colors duration-300 group-hover:text-blue-400">
                 {link.label}
               </Link>
-              {/* Neon underline */}
               <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded" />
             </motion.li>
           ))}
         </motion.ul>
-
-        {/* Right Social Icons */}
         <motion.div
           className="flex gap-4 text-2xl text-gray-300"
           initial={{ opacity: 0 }}
@@ -106,7 +102,7 @@ export default function Footer() {
           ))}
         </motion.div>
       </div>
-      {/* Bottom Copyright */}
+
       <motion.div
         className="relative z-10 pb-6 mt-8 text-xs text-center text-gray-500"
         initial={{ opacity: 0 }}
@@ -114,8 +110,6 @@ export default function Footer() {
         transition={{ delay: 1.2, duration: 0.8 }}>
         © {new Date().getFullYear()} Abdul Rehman — All Rights Reserved.
       </motion.div>
-
-      {/* Floating animation keyframes */}
       <style jsx>{`
         @keyframes float-slow {
           0% { transform: translateY(0px); }
