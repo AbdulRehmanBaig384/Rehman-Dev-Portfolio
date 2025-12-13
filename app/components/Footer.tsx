@@ -47,7 +47,6 @@ export default function Footer() {
     { icon: <FaEnvelope />, href: "mailto:rehmanbaig456@gmail.com" },
     { icon: <FaFacebook />, href: "https://facebook.com/yourprofile" },
   ];
-
   return (
     <footer className="relative overflow-hidden text-gray-300">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
@@ -62,14 +61,12 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center md:text-left"
-        >
+          className="text-center md:text-left">
           <h2 className="text-2xl font-bold text-blue-400">Abdul Rehman Baig</h2>
           <p className="mt-1 text-sm text-gray-400">
             Full-Stack Developer | React | Node.js | MongoDB
           </p>
         </motion.div>
-
         {/* Center Navigation */}
         <motion.ul
           className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
@@ -82,8 +79,7 @@ export default function Footer() {
               key={i}
               whileHover={{ y: -3, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative group"
-            >
+              className="relative group">
               <Link
                 href={link.href}
                 className="relative z-10 px-2 py-1 transition-colors duration-300 group-hover:text-blue-400"
