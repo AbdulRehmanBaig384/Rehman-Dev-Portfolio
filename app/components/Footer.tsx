@@ -56,10 +56,6 @@ export default function Footer() {
           <Particles id="footerParticles" options={particlesOptions} />
         </div>
       )}
-
-      {/*  Floating Glows */}
-
-      {/*  Main Footer Content */}
       <div className="relative z-10 flex flex-col items-center justify-between max-w-6xl gap-6 px-6 py-16 mx-auto md:flex-row">
         {/* Left Section */}
         <motion.div
