@@ -34,7 +34,6 @@ export default function Footer() {
     },
     detectRetina: true,
   };
-
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -42,7 +41,6 @@ export default function Footer() {
     { label: "Experience", href: "/experience" },
     { label: "Contact", href: "/contact" },
   ];
-
   const socialLinks = [
     { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/abdul-rehman-baig-/" },
     { icon: <FaGithub />, href: "https://github.com/AbdulRehmanBaig384" },
@@ -52,10 +50,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden text-gray-300">
-      {/*  Deep Black Gradient Background */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
-      {/*  Particle Background */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-80">
           <Particles id="footerParticles" options={particlesOptions} />
@@ -63,7 +58,6 @@ export default function Footer() {
       )}
 
       {/*  Floating Glows */}
-
 
       {/*  Main Footer Content */}
       <div className="relative z-10 flex flex-col items-center justify-between max-w-6xl gap-6 px-6 py-16 mx-auto md:flex-row">
