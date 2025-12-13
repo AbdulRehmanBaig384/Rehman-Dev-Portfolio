@@ -72,8 +72,7 @@ export default function Footer() {
           className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-        >
+          transition={{ delay: 0.4, duration: 0.8 }}>
           {navLinks.map((link, i) => (
             <motion.li
               key={i}
@@ -82,8 +81,7 @@ export default function Footer() {
               className="relative group">
               <Link
                 href={link.href}
-                className="relative z-10 px-2 py-1 transition-colors duration-300 group-hover:text-blue-400"
-              >
+                className="relative z-10 px-2 py-1 transition-colors duration-300 group-hover:text-blue-400">
                 {link.label}
               </Link>
               {/* Neon underline */}
@@ -97,8 +95,7 @@ export default function Footer() {
           className="flex gap-4 text-2xl text-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-        >
+          transition={{ delay: 0.8, duration: 0.8 }}>
           {socialLinks.map((social, i) => (
             <motion.a
               key={i}
@@ -106,21 +103,18 @@ export default function Footer() {
               target="_blank"
               whileHover={{ scale: 1.3, rotate: 10, color: "#60A5FA" }}
               whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+              transition={{ type: "spring", stiffness: 300 }}>
               {social.icon}
             </motion.a>
           ))}
         </motion.div>
       </div>
-
       {/* Bottom Copyright */}
       <motion.div
         className="relative z-10 pb-6 mt-8 text-xs text-center text-gray-500"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-      >
+        transition={{ delay: 1.2, duration: 0.8 }}>
         © {new Date().getFullYear()} Abdul Rehman — All Rights Reserved.
       </motion.div>
 
