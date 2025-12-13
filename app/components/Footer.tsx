@@ -14,15 +14,13 @@ export default function Footer() {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
-
-  //  Particle configuration
+  
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
       events: { onHover: { enable: true, mode: "repulse" }, resize:{ enable: true }},
-      modes: { repulse: { distance: 120, duration: 0.4 } },
-    },
+      modes: { repulse: { distance: 120, duration: 0.4 } },},
     particles: {
       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
       links: { color: "#00d4ff", distance: 140, enable: true, opacity: 0.25, width: 1 },
@@ -30,8 +28,7 @@ export default function Footer() {
       number: { density: { enable: true, factor: 800 } as any, value: 65 },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } },
-    },
+      size: { value: { min: 1, max: 3 } },},
     detectRetina: true,
   };
   const navLinks = [
@@ -138,6 +135,4 @@ export default function Footer() {
         }
       `}</style>
     </footer>
-  );
-}
-
+  );}
