@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -10,8 +9,6 @@ import type { ISourceOptions } from "@tsparticles/engine";
 
 export default function Footer() {
   const [init, setInit] = useState(false);
-
-  //  Initialize particles (same as HeroSection)
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
