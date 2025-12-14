@@ -85,5 +85,4 @@ const HeroSection: React.FC = () => {
     </motion.section>
   );
 };
-
 export default HeroSection;
