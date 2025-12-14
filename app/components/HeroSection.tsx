@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { ISourceOptions } from "@tsparticles/engine";
@@ -7,14 +6,11 @@ import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 const HeroSection: React.FC = () => {
   const [init, setInit] = useState(false);
-
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
-
-  //  Particle configuration (smooth movement)
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
