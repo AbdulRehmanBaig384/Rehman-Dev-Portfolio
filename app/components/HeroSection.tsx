@@ -55,12 +55,8 @@ const HeroSection: React.FC = () => {
         <Particles id="tsparticles" options={particlesOptions} />
       </div>
       <div className="absolute inset-0 -z-30 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
-      {/*  Side Glows */}
       <div className="side-glow left" />
       <div className="side-glow right" />
-
-      {/*  Hero Content */}
       <div className="z-10 px-6">
         <h1 className="mb-4 text-5xl font-extrabold text-transparent sm:text-6xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text drop-shadow-lg">
           Hi, I’m Abdul Rehman Baig
