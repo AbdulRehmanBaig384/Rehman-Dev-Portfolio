@@ -61,7 +61,6 @@ const HeroSection: React.FC = () => {
         <h1 className="mb-4 text-5xl font-extrabold text-transparent sm:text-6xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text drop-shadow-lg">
           Hi, I’m Abdul Rehman Baig
         </h1>
-
         <p className="max-w-2xl mx-auto mb-8 text-lg leading-relaxed text-gray-300 sm:text-xl">
           Full Stack Developer — Building modern and scalable web apps using{" "}
           <span className="font-medium text-blue-400">
@@ -78,8 +77,6 @@ const HeroSection: React.FC = () => {
           </button>
         </div>
       </div>
-
-      {/*  Floating Glow Orbs */}
       <div className="absolute w-48 h-48 rounded-full bg-blue-500/20 blur-3xl top-10 left-10 animate-float-slow" />
       <div className="absolute w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl bottom-10 right-10 animate-float-slower" />
     </motion.section>
