@@ -51,7 +51,6 @@ const HeroSection: React.FC = () => {
   if (!init) return null;
   return (
     <motion.section className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center text-white">
-      {/* 🔹 Particle Background */}
       <div className="absolute inset-0 -z-20">
         <Particles id="tsparticles" options={particlesOptions} />
       </div>
