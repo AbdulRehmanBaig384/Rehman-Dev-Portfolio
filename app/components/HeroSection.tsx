@@ -54,8 +54,6 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 -z-20">
         <Particles id="tsparticles" options={particlesOptions} />
       </div>
-
-      {/* Background color same as About section */}
       <div className="absolute inset-0 -z-30 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
 
       {/*  Side Glows */}
