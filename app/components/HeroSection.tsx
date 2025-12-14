@@ -23,8 +23,7 @@ const HeroSection: React.FC = () => {
       modes: {
         repulse: { distance: 120, duration: 0.4 },
         push: { quantity: 2 },
-      },
-    },
+      },},
     particles: {
       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
       links: {
@@ -49,9 +48,7 @@ const HeroSection: React.FC = () => {
     },
     detectRetina: true,
   };
-
   if (!init) return null;
-
   return (
     <motion.section className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center text-white">
       {/* 🔹 Particle Background */}
