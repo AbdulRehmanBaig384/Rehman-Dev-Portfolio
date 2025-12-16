@@ -12,22 +12,17 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
    }, 7500);
     return () => clearTimeout(timer);
   }, []);
-
   if (!show) return null;
-
   return (
     <motion.div
       className="fixed inset-0 bg-black flex items-center justify-center z-[99999] overflow-hidden pointer-events-none" 
       //  pointer-events-none makes underlying UI usable
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ delay: 6.6, duration: 1.2 }}
-    >
-      {/*  Three.js Hologram Sphere */}
+      transition={{ delay: 6.6, duration: 1.2 }}>
       <Canvas
         className="absolute inset-0"
-        camera={{ position: [0, 0, 3.2], fov: 50 }}
-      >
+        camera={{ position: [0, 0, 3.2], fov: 50 }}>
         <ambientLight intensity={0.4} />
         <pointLight position={[2, 2, 2]} intensity={1.5} />
         <Sphere args={[1.6, 64, 64]}>
