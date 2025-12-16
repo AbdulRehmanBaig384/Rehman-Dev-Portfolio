@@ -5,11 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
   const [show, setShow] = useState(true);
-
   const words = ["WELCOME TO", "ABDUL REHMAN BAIG", "PORTFOLIO"];
-
   useEffect(() => {
-    // Total animation time: 7.5s (matches your setup)
     const timer = setTimeout(() =>{ setShow(false)
     onFinish();
    }, 7500);
