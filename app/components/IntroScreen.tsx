@@ -16,7 +16,6 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
   return (
     <motion.div
       className="fixed inset-0 bg-black flex items-center justify-center z-[99999] overflow-hidden pointer-events-none" 
-      //  pointer-events-none makes underlying UI usable
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 6.6, duration: 1.2 }}>
@@ -30,12 +29,10 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
             wireframe
             color={"#0ef"}
             emissive={"#0ef"}
-            emissiveIntensity={1.8}
-          />
+            emissiveIntensity={1.8}/>
         </Sphere>
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
-
       {/* Glow */}
       <motion.div
         className="absolute w-80 h-80 md:w-96 md:h-96 bg-cyan-500 blur-[180px] rounded-full"
