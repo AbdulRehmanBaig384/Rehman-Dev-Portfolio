@@ -1,12 +1,9 @@
 "use client";
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
 export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
- 
   const [show, setShow] = useState(true);
 
   const words = ["WELCOME TO", "ABDUL REHMAN", "PORTFOLIO"];
