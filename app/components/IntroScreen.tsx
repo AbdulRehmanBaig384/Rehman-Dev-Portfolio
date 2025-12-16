@@ -41,19 +41,15 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
       <motion.div
         className="absolute inset-0"
         style={{
-          background:
-            "repeating-linear-gradient(0deg, rgba(0,255,255,0.06) 0px, transparent 4px)",}}
+          background:"repeating-linear-gradient(0deg, rgba(0,255,255,0.06) 0px, transparent 4px)",}}
         initial={{ backgroundPositionY: "0%" }}
         animate={{ backgroundPositionY: "200%" }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}/>
-
-      {/* Enter Wall */}
       <motion.div
         className="absolute inset-0 bg-[#06131D]"
         initial={{ y: "-100%" }}
         animate={{ y: 0 }}
-        transition={{ duration: 1.1, ease: "easeInOut" }}
-      />
+        transition={{ duration: 1.1, ease: "easeInOut" }}/>
 
       {/* Exit Wall */}
       <motion.div
