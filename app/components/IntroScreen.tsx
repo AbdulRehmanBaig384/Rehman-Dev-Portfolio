@@ -33,25 +33,19 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
         </Sphere>
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
-      {/* Glow */}
       <motion.div
         className="absolute w-80 h-80 md:w-96 md:h-96 bg-cyan-500 blur-[180px] rounded-full"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 4, opacity: 0.45 }}
-        transition={{ duration: 2 }}
-      />
-
-      {/* Scanlines */}
+        transition={{ duration: 2 }}/>
       <motion.div
         className="absolute inset-0"
         style={{
           background:
-            "repeating-linear-gradient(0deg, rgba(0,255,255,0.06) 0px, transparent 4px)",
-        }}
+            "repeating-linear-gradient(0deg, rgba(0,255,255,0.06) 0px, transparent 4px)",}}
         initial={{ backgroundPositionY: "0%" }}
         animate={{ backgroundPositionY: "200%" }}
-        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-      />
+        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}/>
 
       {/* Enter Wall */}
       <motion.div
