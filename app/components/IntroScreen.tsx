@@ -50,14 +50,11 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
         initial={{ y: "-100%" }}
         animate={{ y: 0 }}
         transition={{ duration: 1.1, ease: "easeInOut" }}/>
-
-      {/* Exit Wall */}
       <motion.div
         className="absolute inset-0 bg-black"
         initial={{ y: 0 }}
         animate={{ y: "100%" }}
-        transition={{ delay: 5, duration: 1.2, ease: "easeInOut" }}
-      />
+        transition={{ delay: 5, duration: 1.2, ease: "easeInOut" }}/>
 
       {/* Text */}
       <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center px-6 space-y-4">
