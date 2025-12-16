@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
   const [show, setShow] = useState(true);
 
-  const words = ["WELCOME TO", "ABDUL REHMAN", "PORTFOLIO"];
+  const words = ["WELCOME TO", "ABDUL REHMAN BAIG", "PORTFOLIO"];
 
   useEffect(() => {
     // Total animation time: 7.5s (matches your setup)
