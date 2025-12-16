@@ -55,8 +55,6 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
         initial={{ y: 0 }}
         animate={{ y: "100%" }}
         transition={{ delay: 5, duration: 1.2, ease: "easeInOut" }}/>
-
-      {/* Text */}
       <div className="absolute inset-0 z-[10] flex flex-col items-center justify-center text-center px-6 space-y-4">
         {words.map((word, i) => (
           <motion.div
@@ -66,29 +64,20 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
             transition={{
               delay: 1.3 + i * 1,
               duration: 0.9,
-              ease: "easeOut",
-            }}
+              ease: "easeOut", }}
             className={`font-extrabold ${
               i === 1
                 ? "text-4xl sm:text-6xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(0,200,255,0.6)]"
-                : "text-gray-300 text-lg sm:text-3xl tracking-wider"
-            }`}
-          >
+                : "text-gray-300 text-lg sm:text-3xl tracking-wider" }`}>
             {word}
           </motion.div>
         ))}
       </div>
-
-      {/* Noise */}
       <motion.div
         className="absolute inset-0 opacity-20 mix-blend-screen"
         style={{
           backgroundImage:
-            "url('https://www.transparenttextures.com/patterns/static.png')",
-        }}
+            "url('https://www.transparenttextures.com/patterns/static.png')",}}
         animate={{ opacity: [0.1, 0.3, 0.2, 0.4] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
-    </motion.div>
-  );
-}
+        transition={{ duration: 3, repeat: Infinity }}/>
+    </motion.div>);}
