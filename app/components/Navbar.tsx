@@ -23,16 +23,12 @@ export default function Navbar() {
       }),
       { threshold: 0.4 }
     );
-
     navLinks.forEach(({ href }) => {
       const el = document.querySelector(href);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, []);
-
-  // Navbar shrink while scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
