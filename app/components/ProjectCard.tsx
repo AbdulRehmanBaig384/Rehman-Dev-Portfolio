@@ -162,15 +162,13 @@ export default function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#00d4ff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:brightness-125 transition">
                   GitHub
-                </a>
-              )}
+                )}
               {p.deploy && (
                 <a
                   href={p.deploy}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#7c5cff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(124,92,255,0.4)] hover:brightness-125 transition"
-                >
+                  className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#7c5cff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(124,92,255,0.4)] hover:brightness-125 transition">
                   Live Demo
                 </a>
               )}
@@ -178,13 +176,10 @@ export default function ProjectsPage() {
           </motion.div>
         ))}
       </div>
-
-      {/* Glow Divider */}
       <motion.div
         animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"
-      />
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
     </motion.section>
   );
 }
