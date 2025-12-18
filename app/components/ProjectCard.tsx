@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -12,7 +11,6 @@ import voicetodo from "../images/voiceTodo.png"
 import healthmate from "../images/healthmate.jpg"
 export default function ProjectsPage() {
   const [init, setInit] = useState(false);
-
   interface Project {
   title: string;
   img: string;
@@ -21,14 +19,11 @@ export default function ProjectsPage() {
   deploy?: string;
   gradient?: string;
 }
-
-
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
-
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
@@ -56,7 +51,7 @@ export default function ProjectsPage() {
       deploy: "https://shopease.vercel.app",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
-      {
+    {
     title: "Voice ToDo MERN App",
     img: voicetodo.src, 
     desc: "A full-stack MERN ToDo app with voice commands. Users can add, update, and delete tasks using voice input, with real-time MongoDB storage.",
@@ -104,7 +99,6 @@ export default function ProjectsPage() {
       deploy: "",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
-    // New Project
     {
       title: "Virtual Maze Solver",
       img: virtualmaze.src,
@@ -114,7 +108,6 @@ export default function ProjectsPage() {
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
   ];
-
   return (
     <motion.section
       id="projects"
@@ -122,12 +115,8 @@ export default function ProjectsPage() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white"
-    >
-      {/* Background Gradient */}
+      className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
-      {/* Particle Background */}
       {init && (
         <div className="absolute inset-0 -z-10 opacity-80">
           <Particles id="projectParticles" options={particlesOptions} />
