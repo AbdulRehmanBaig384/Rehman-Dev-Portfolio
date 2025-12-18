@@ -147,25 +147,20 @@ export default function ProjectsPage() {
               <img
                 src={p.img}
                 alt={p.title}
-                className="w-full h-full object-cover hover:scale-110 transition-all duration-500"
-              />
+                className="w-full h-full object-cover hover:scale-110 transition-all duration-500"/>
             </div>
-
-            {/* Title */}
+            {/* title */}
             <h3 className="text-2xl font-semibold text-[#60a5fa] mb-2">{p.title}</h3>
-
-            {/* Description */}
+            {/* description */}
             <p className="text-zinc-300 leading-relaxed mb-4">{p.desc}</p>
-
-            {/* Links */}
+            {/* links */}
             <div className="flex gap-4">
               {p.github && (
                 <a
                   href={p.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#00d4ff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:brightness-125 transition"
-                >
+                  className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#00d4ff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:brightness-125 transition">
                   GitHub
                 </a>
               )}
