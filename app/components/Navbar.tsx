@@ -9,16 +9,13 @@ const navLinks = [
   { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Services", href: "#services" },
-   { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
-
 export default function Navbar() {
   const [active, setActive] = useState("#hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  // Highlight active section while scrolling
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
