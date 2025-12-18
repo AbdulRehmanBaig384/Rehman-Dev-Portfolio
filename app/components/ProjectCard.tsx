@@ -136,7 +136,6 @@ export default function ProjectsPage() {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
-      {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {projects.map((p, i) => (
           <motion.div
@@ -144,7 +143,6 @@ export default function ProjectsPage() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 120, damping: 12 }}
             className="glass rounded-2xl p-6 backdrop-blur-md border-2 border-[#00d4ff]/40 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow" >
-            {/* Image */}
             <div className="w-full h-48 rounded-xl overflow-hidden mb-4 border border-white/10">
               <img
                 src={p.img}
