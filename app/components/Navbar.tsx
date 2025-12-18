@@ -1,16 +1,14 @@
 'use client';
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
 const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
-    { label: "Tech Stack", href: "#tech" },
+  { label: "Tech Stack", href: "#tech" },
   { label: "Education", href: "#education" },
-   { label: "Experience", href: "#experience" },
-     { label: "Services", href: "#services" },
+  { label: "Experience", href: "#experience" },
+  { label: "Services", href: "#services" },
    { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
