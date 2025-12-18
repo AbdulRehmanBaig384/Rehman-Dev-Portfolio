@@ -122,26 +122,20 @@ export default function ProjectsPage() {
           <Particles id="projectParticles" options={particlesOptions} />
         </div>
       )}
-
-      {/* Heading */}
       <motion.div
         className="relative mt-10 mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
+        transition={{ duration: 0.7 }}>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
           Projects 
         </h2>
-
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80%" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"
-        />
+          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
-
       {/* Project Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {projects.map((p, i) => (
@@ -149,8 +143,7 @@ export default function ProjectsPage() {
             key={i}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 120, damping: 12 }}
-            className="glass rounded-2xl p-6 backdrop-blur-md border-2 border-[#00d4ff]/40 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow"
-          >
+            className="glass rounded-2xl p-6 backdrop-blur-md border-2 border-[#00d4ff]/40 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow" >
             {/* Image */}
             <div className="w-full h-48 rounded-xl overflow-hidden mb-4 border border-white/10">
               <img
