@@ -27,8 +27,7 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
           className="max-w-xl mt-2 text-base text-zinc-400"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
+          transition={{ delay: 0.2, duration: 0.5 }}>
           {subtitle}
         </motion.p>
       )}
