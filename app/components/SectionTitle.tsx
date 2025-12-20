@@ -31,8 +31,6 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
           {subtitle}
         </motion.p>
       )}
-
-      {/* subtle blue line animation */}
       <motion.div
         className="mt-3 h-[2px] w-20 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto sm:mx-0 rounded-full"
         initial={{ width: 0 }}
