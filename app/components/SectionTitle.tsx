@@ -40,5 +40,4 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
         transition={{ duration: 0.6, ease: "easeOut" }}
       />
     </motion.div>
-  );
-}
+  );}
