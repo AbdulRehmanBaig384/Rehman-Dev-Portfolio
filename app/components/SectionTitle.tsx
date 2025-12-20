@@ -15,7 +15,7 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
       className="mb-10 text-center sm:text-left"
-    >
+ >
       <motion.h2
         className="text-3xl font-bold text-transparent sm:text-4xl bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-500 bg-clip-text"
         whileHover={{ scale: 1.05 }}
