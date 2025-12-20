@@ -21,7 +21,6 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
         transition={{ type: "spring", stiffness: 120 }}>
         {title}
       </motion.h2>
-
       {subtitle && (
         <motion.p
           className="max-w-xl mt-2 text-base text-zinc-400"
