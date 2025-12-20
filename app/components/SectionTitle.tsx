@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -8,7 +7,6 @@ type Props = {
   subtitle?: string;
    centered?: boolean;
 };
-
 export default function SectionTitle({ title, subtitle,centered }: Props) {
   return (
     <motion.div
