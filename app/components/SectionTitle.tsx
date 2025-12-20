@@ -35,7 +35,6 @@ export default function SectionTitle({ title, subtitle,centered }: Props) {
         className="mt-3 h-[2px] w-20 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto sm:mx-0 rounded-full"
         initial={{ width: 0 }}
         whileInView={{ width: 80 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      />
+        transition={{ duration: 0.6, ease: "easeOut" }}/>
     </motion.div>
   );}
