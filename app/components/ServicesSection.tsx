@@ -81,11 +81,8 @@ const ServicesSection: React.FC = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
-    >
-      {/*  Gradient + Particle Background  */}
+      variants={containerVariants}>
   <div className="absolute inset-0 -z-20 bg-gradient-to-b  from-blue-950/50 via-black to-blue-950/20" />
-
 {init && (
   <div className="absolute inset-0 -z-10 opacity-80">
     <Particles id="servicesParticles" options={particlesOptions} />
