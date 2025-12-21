@@ -48,11 +48,8 @@ const cardVariants:Variants = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
-
 const ServicesSection: React.FC = () => {
   const [init, setInit] = useState(false);
-
-  // Initialize Particle Engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
