@@ -55,8 +55,6 @@ const ServicesSection: React.FC = () => {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
-
-  //  Particle Configuration (same as Contact)
   const particlesOptions: ISourceOptions = {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
