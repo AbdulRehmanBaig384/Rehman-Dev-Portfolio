@@ -142,7 +142,6 @@ const ServicesSection: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-      {/*  Animated Bottom Line */}
       <motion.div
         animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3 }}
