@@ -12,8 +12,7 @@ const services = [
     description:
       "Responsive and interactive UIs using React.js, HTML, CSS, and modern frameworks.",
     icon: <Code size={40} className="text-blue-400" />,
-  },
-  {
+  },{
     title: "Backend Development",
     description:
       "Robust server-side logic, APIs, and integrations using Node.js and Express.",
