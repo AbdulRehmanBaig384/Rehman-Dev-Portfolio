@@ -97,24 +97,20 @@ const ServicesSection: React.FC = () => {
           className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+          transition={{ duration: 0.6 }}>
           My Services
         </motion.h2>
-
              <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: "60%" }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                   className="  absolute mt-0 justify-center items-center left-1/2 -bottom-2 h-[4px] -translate-x-1/2 bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] rounded-full shadow-[0_0_20px_rgba(0,212,255,0.6)]"
                 ></motion.div>
-
         <motion.p
           className="max-w-xl mx-auto text-gray-300"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
+          transition={{ delay: 0.2 }}>
           I offer full-stack development solutions using modern technologies and best practices.
         </motion.p>
       </motion.div>
@@ -122,8 +118,7 @@ const ServicesSection: React.FC = () => {
       {/*  Service Cards */}
       <motion.div
         className="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-4 max-w-7xl"
-        variants={containerVariants}
-      >
+        variants={containerVariants}>
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -133,13 +128,11 @@ const ServicesSection: React.FC = () => {
               y: -5,
               boxShadow: "0 0 25px rgba(0,183,255,0.5)",
             }}
-            className="p-8 transition-transform duration-300 border border-blue-500 shadow-xl cursor-pointer glass rounded-2xl backdrop-blur-md"
-          >
+            className="p-8 transition-transform duration-300 border border-blue-500 shadow-xl cursor-pointer glass rounded-2xl backdrop-blur-md">
             <motion.div
               className="mb-4"
               whileHover={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 0.6 }}
-            >
+              transition={{ duration: 0.6 }}>
               {service.icon}
             </motion.div>
             <h3 className="mb-2 text-xl font-semibold text-[#60a5fa]">
@@ -149,15 +142,12 @@ const ServicesSection: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-
       {/*  Animated Bottom Line */}
       <motion.div
         animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"
-      />
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
     </motion.section>
   );
 };
-
 export default ServicesSection;
