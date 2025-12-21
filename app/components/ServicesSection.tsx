@@ -73,7 +73,6 @@ const ServicesSection: React.FC = () => {
     },
     detectRetina: true,
   };
-
   return (
     <motion.section
       id="services"
@@ -88,16 +87,12 @@ const ServicesSection: React.FC = () => {
     <Particles id="servicesParticles" options={particlesOptions} />
   </div>
 )}
-
-
-      {/*  Animated Heading */}
-      <motion.div
+   <motion.div
         className="relative mb-12 text-center"
         variants={cardVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
-      >
+        viewport={{ once: true }}>
         <motion.h2
           className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -15 }}
