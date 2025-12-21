@@ -31,7 +31,6 @@ const services = [
     icon: <Smartphone size={40} className="text-blue-400" />,
   },
 ];
-
 const containerVariants:Variants = {
   hidden: {},
   show: {
@@ -40,7 +39,6 @@ const containerVariants:Variants = {
     },
   },
 };
-
 const cardVariants:Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   show: {
