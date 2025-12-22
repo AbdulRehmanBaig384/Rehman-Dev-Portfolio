@@ -1,50 +1,3 @@
-// export type Project = {
-//   id: string;
-//   title: string;
-//   description: string;
-//   tech: string[];
-//   github?: string;
-//   demo?: string;
-//   image?: string;
-// };
-
-// export const projects: Project[] = [
-//   {
-//     id: "ecommerce-mern",
-//     title: "E-Commerce MERN App",
-//     description:
-//       "Full-featured e-commerce app with authentication, shopping cart, and payments integration.",
-//     tech: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-//     github: "https://github.com/username/ecommerce-mern",
-//     demo: "https://ecommerce.example.com",
-//     image: "/file.svg",
-//   },
-//   {
-//     id: "realtime-chat",
-//     title: "Realtime Chat (Socket.io)",
-//     description:
-//       "Realtime messaging app with rooms, media sharing, and typing indicators built on Socket.io.",
-//     tech: ["Node.js", "Socket.io", "React", "Express"],
-//     github: "https://github.com/username/realtime-chat",
-//     demo: "https://chat.example.com",
-//     image: "/globe.svg",
-//   },
-//   {
-//     id: "data-dashboard",
-//     title: "Data Dashboard",
-//     description:
-//       "Interactive dashboard with charts and API integrations for analytics and reporting.",
-//     tech: ["React", "TypeScript", "Chart.js", "Node.js"],
-//     github: "https://github.com/username/data-dashboard",
-//     demo: "https://dashboard.example.com",
-//     image: "/next.svg",
-//   },
-// ];
-
-// export default projects;
-
-
-// src/data/projects.ts
 export type Project = {
   id: string;
   title: string;
@@ -53,7 +6,7 @@ export type Project = {
   github?: string;
   demo?: string;
   image?: string;
-  highlight?: string; // new field for quick badge (e.g., "Featured", "2025 Project")
+  highlight?: string; 
 };
 
 export const projects: Project[] = [
