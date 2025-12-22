@@ -18,12 +18,8 @@ export default function TechBadge({ name }: Props) {
         stiffness: 250,
         damping: 12,
       }}
-      className="
-        relative inline-block rounded-full 
-        bg-gradient-to-r from-blue-700/30 via-indigo-800/30 to-cyan-700/30 
-        px-4 py-1.5 text-sm font-semibold 
-        text-blue-100 tracking-wide 
-        border border-blue-500/40 
+      className="relative inline-block rounded-full bg-gradient-to-r from-blue-700/30 via-indigo-800/30 to-cyan-700/30 
+        px-4 py-1.5 text-sm font-semibold text-blue-100 tracking-wide border border-blue-500/40 
         shadow-[0_0_12px_rgba(37,99,235,0.35)]
         backdrop-blur-md
         hover:border-cyan-400/70
