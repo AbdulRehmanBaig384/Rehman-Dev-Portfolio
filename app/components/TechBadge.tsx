@@ -2,11 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
 type Props = {
   name: string;
 };
-
 export default function TechBadge({ name }: Props) {
   return (
     <motion.span
