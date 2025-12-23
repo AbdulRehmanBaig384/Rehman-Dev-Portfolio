@@ -34,15 +34,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-x-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#071428] to-[#050409]`}>
-        {/* floating animated glows */}
         <div className="absolute inset-0 bg-glow -z-10"></div>
-        {/* main content */}
         <main className="min-h-screen">
             <div className="side-glow left"></div>
             <div className="side-glow right"></div>
             {children}
         </main>
-
         <Footer/>
       </body>
     </html>
