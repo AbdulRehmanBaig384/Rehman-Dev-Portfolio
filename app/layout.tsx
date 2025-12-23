@@ -39,8 +39,9 @@ export default function RootLayout({
         {/* main content */}
         <main className="min-h-screen">
             <div className="side-glow left"></div>
-  <div className="side-glow right"></div>
-          {children}</main>
+            <div className="side-glow right"></div>
+            {children}
+        </main>
 
         <Footer/>
       </body>
