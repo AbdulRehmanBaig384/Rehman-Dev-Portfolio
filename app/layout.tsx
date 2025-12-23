@@ -11,7 +11,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 export const metadata: Metadata = {
   title: "Abdul Rehman Baig — Full-Stack Developer",
   description:
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
 };
-
 export default function RootLayout({
   children,
 }: {
