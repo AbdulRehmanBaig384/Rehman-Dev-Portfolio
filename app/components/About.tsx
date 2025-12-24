@@ -1,6 +1,5 @@
 "use client";
 import { motion,Variants } from "framer-motion";
-
 export default function About() {
   const sectionVariants:Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -8,8 +7,7 @@ export default function About() {
     opacity: 1,
     y: 0,
     transition: { duration: 0.7, ease: "easeOut" as const },
-  },
-};
+  },};
   return (
     <motion.section
       id="about"
@@ -18,7 +16,6 @@ export default function About() {
       whileInView="show"
      className="relative flex flex-col items-center justify-center pt-20 overflow-hidden text-center">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
