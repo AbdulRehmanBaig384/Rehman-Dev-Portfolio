@@ -79,26 +79,21 @@ export default function Contact() {
         <div className="absolute inset-0 rounded-3xl pointer-events-none border border-transparent">
           <div className="absolute inset-0 rounded-3xl border-2 border-transparent neon-border"></div>
         </div>
-
         {/* Form */}
         <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
-
           <div>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name"
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all" />
           </div>
-
           <div>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com"
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"/>
           </div>
-
           <div>
             <textarea rows={4} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="Write your message..."
               className="w-full px-4 py-3 text-white bg-black/20 rounded-lg outline-none border border-white/20 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 transition-all"
             ></textarea>
           </div>
-
           {/* BUTTON */}
           <motion.button type="submit"  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
             className="  w-full py-3 mt-4 font-semibold text-white rounded-full bg-gradient-to-r from-blue-950/50 via-black to-blue-950/20
