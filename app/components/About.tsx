@@ -24,7 +24,6 @@ export default function About() {
           className=" mb-8 text-5xl font-extrabold bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl">
         About Me
       </motion.h2>
-
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,21 +41,18 @@ export default function About() {
           <span className="text-cyan-400">Next.js</span>, and{" "}
           <span className="text-cyan-400">Node.js</span>.
         </p>
-
         <p className="mb-6 text-base leading-relaxed text-zinc-400 md:text-lg">
           My mission is to blend creativity with technology — delivering
           seamless digital experiences that look stunning and feel effortless.
           Every project I build focuses on performance, accessibility, and
           beautiful design.
         </p>
-
         <p className="mb-10 text-base leading-relaxed text-zinc-400 md:text-lg">
           I’m always exploring new frameworks, libraries, and design systems to
           stay ahead in this fast-moving tech world. My ultimate goal is to
           evolve into one of the leading developers in my field and make a
           meaningful impact through innovation and collaboration.
         </p>
-
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
