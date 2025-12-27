@@ -18,8 +18,6 @@ import ExperiencePage from "./components/Experience";
 import Contact from "./components/Contact";
 import IntroScreen from "./components/IntroScreen";
 import SocialSidebar from "./components/SocialSiderbar";
-
-// Sections for left dots
 const SECTIONS = [
   { id: "hero" },
   { id: "about" },
@@ -30,7 +28,6 @@ const SECTIONS = [
   { id: "projects" },
   { id: "contact" },
 ];
-
 export default function Home() {
   // const [init, setInit] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
