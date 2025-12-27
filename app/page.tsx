@@ -45,14 +45,6 @@ export default function Home() {
   //     color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
   //     links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
   //     move: { enable: true, speed: 1.2, outModes: { default: "bounce" as const } },
-  //     number: { density: { enable: true, factor: 800 } as any, value: 80 },
-  //     opacity: { value: 0.5 },
-  //     shape: { type: "circle" },
-  //     size: { value: { min: 1, max: 3 } },
-  //   },
-  //   detectRetina: true,
-  // };
-
   const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
