@@ -38,10 +38,6 @@ export default function Home() {
 
 // useEffect(() => {
 //   loadSlim().then(() => setParticlesLoaded(true));
-// }, []);
-
-
-
   // const particlesOptions = {
   //   background: { color: { value: "transparent" } },
   //   fpsLimit: 120,
