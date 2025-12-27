@@ -30,10 +30,6 @@ const SECTIONS = [
 ];
 export default function Home() {
   const [introFinished, setIntroFinished] = useState(false);
-  // particle setup
-  // const particlesInit = async (main: any) => {
-
-
   const [particlesLoaded, setParticlesLoaded] = useState(false);
 
 // useEffect(() => {
