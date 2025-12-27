@@ -29,13 +29,10 @@ const SECTIONS = [
   { id: "contact" },
 ];
 export default function Home() {
-  // const [init, setInit] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
   // particle setup
   // const particlesInit = async (main: any) => {
-  //   await loadSlim(main);
-  //   setInit(true);
-  // };
+
 
   const [particlesLoaded, setParticlesLoaded] = useState(false);
 
