@@ -34,8 +34,6 @@ export default function Home() {
   // const particlesOptions = {
   //   background: { color: { value: "transparent" } },
   //   fpsLimit: 120,
-  //   particles: {
-  //     color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
   const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
