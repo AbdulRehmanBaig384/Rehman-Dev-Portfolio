@@ -36,7 +36,6 @@ export default function Home() {
   //   fpsLimit: 120,
   //   particles: {
   //     color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
-  //     links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
   const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
