@@ -33,7 +33,6 @@ export default function Home() {
   const [particlesLoaded, setParticlesLoaded] = useState(false);
   // const particlesOptions = {
   //   background: { color: { value: "transparent" } },
-  //   fpsLimit: 120,
   const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
