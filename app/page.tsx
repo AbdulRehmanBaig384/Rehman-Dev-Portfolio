@@ -31,8 +31,6 @@ const SECTIONS = [
 export default function Home() {
   const [introFinished, setIntroFinished] = useState(false);
   const [particlesLoaded, setParticlesLoaded] = useState(false);
-  // const particlesOptions = {
-  //   background: { color: { value: "transparent" } },
   const particlesOptions = {
   background: { color: { value: "transparent" } },
   fpsLimit: 120,
