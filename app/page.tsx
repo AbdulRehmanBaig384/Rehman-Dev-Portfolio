@@ -81,8 +81,7 @@ export default function Home() {
           transition={{ duration: 1.2 }}
           className="relative z-10"
         ></motion.div>)}
-      {/* Particles Background */}
-      {/* <Particles id="particles-bg" init={particlesInit} options={particlesOptions} /> */}
+      
       {particlesLoaded && <Particles id="particles-bg" options={particlesOptions} />}
 
 
