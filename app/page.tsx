@@ -62,15 +62,12 @@ export default function Home() {
       },
       { threshold: 0.55 }
     );
-
     SECTIONS.forEach((s) => {
       const el = document.getElementById(s.id);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
   }, []);
-
   return (
     <motion.main
       initial="hidden"
