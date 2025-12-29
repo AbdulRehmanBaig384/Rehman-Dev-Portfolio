@@ -85,17 +85,13 @@ export default function Home() {
       {/* ---------------- LEFT SIDE DOT INDICATORS ---------------- */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
         {SECTIONS.map((s) => (
-          <button
-            key={s.id}
-            onClick={() =>
-              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" })
-            }
+          <button key={s.id} onClick={() =>
+              document.getElementById(s.id)?.scrollIntoView({ behavior: "smooth" })}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               activeSection === s.id
                 ? "bg-[#00d4ff] scale-150 shadow-[0_0_15px_rgba(0,212,255,0.7)]"
                 : "bg-gray-500/60 hover:scale-110"
-            }`}
-          />
+            }`}/>
         ))}
       </div>
       <Navbar />
