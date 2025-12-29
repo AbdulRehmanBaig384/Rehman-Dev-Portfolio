@@ -72,11 +72,8 @@ export default function Home() {
     <motion.main
       initial="hidden"
       animate="enter"
-      className="relative min-h-screen overflow-hidden text-white scroll-smooth"
-    >
+      className="relative min-h-screen overflow-hidden text-white scroll-smooth">
         {!introFinished && <IntroScreen onFinish={() => setIntroFinished(true)} />}
-
-     {/* Render Portfolio After Intro */}
        {introFinished && (
         <motion.div
           initial={{ opacity: 0 }}
