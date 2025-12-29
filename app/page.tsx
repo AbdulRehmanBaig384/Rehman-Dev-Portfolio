@@ -52,10 +52,7 @@ export default function Home() {
   },
   detectRetina: true,
 };
-
-  /* --------------------------- LEFT SIDE DOTS --------------------------- */
   const [activeSection, setActiveSection] = useState("hero");
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
