@@ -79,12 +79,9 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="relative z-10"
-        ></motion.div>)}
-      
+          className="relative z-10">
+        </motion.div>)}
       {particlesLoaded && <Particles id="particles-bg" options={particlesOptions} />}
-
-
       {/* ---------------- LEFT SIDE DOT INDICATORS ---------------- */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
         {SECTIONS.map((s) => (
@@ -101,24 +98,17 @@ export default function Home() {
           />
         ))}
       </div>
-
-      {/* Navbar */}
       <Navbar />
-
-      {/* Hero Section */}
       <section id="hero">
         <HeroSection />
       </section>
       <SocialSidebar/>
-
       <section id="about">
         <About />
       </section>
-
       <section id="tech">
         <TechStack />
       </section>
-
       <section id="education">
         <Education />
       </section>
