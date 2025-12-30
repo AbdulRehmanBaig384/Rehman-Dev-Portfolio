@@ -82,7 +82,7 @@ export default function Home() {
           className="relative z-10">
         </motion.div>)}
       {particlesLoaded && <Particles id="particles-bg" options={particlesOptions} />}
-      {/* ---------------- LEFT SIDE DOT INDICATORS ---------------- */}
+      {/* - LEFT SIDE DOT INDICATORS - */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
         {SECTIONS.map((s) => (
           <button key={s.id} onClick={() =>
