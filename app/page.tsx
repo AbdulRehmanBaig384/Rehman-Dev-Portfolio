@@ -127,14 +127,6 @@ export default function Home() {
   );
 }
 
-
-
-
-
-// import { motion } from "framer-motion";
-// import Particles from "@tsparticles/react";
-// import { loadSlim } from "@tsparticles/slim";
-
 // import Navbar from "./components/Navbar";
 // import HeroSection from "./components/HeroSection";
 // import About from "./components/About";
