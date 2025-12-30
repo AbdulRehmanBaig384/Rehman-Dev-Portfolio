@@ -131,9 +131,6 @@ export default function Home() {
 
 
 
-// "use client";
-
-// import { useState, useEffect } from "react";
 // import { motion } from "framer-motion";
 // import Particles from "@tsparticles/react";
 // import { loadSlim } from "@tsparticles/slim";
