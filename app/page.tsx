@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-// import HeroSection from "./components/HeroSection";
 // import About from "./components/About";
 // import ServicesSection from "./components/ServicesSection";
 // import TechStack from "./components/TechStack";
