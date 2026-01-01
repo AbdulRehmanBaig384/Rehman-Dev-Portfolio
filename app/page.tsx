@@ -142,10 +142,6 @@ export default function Home() {
 //   "services",
 //   "tech",
 //   "education",
-//   "experience",
-//   "projects",
-//   "contact",
-// ];
 
 // export default function Home() {
 //   const [introFinished, setIntroFinished] = useState(false);
