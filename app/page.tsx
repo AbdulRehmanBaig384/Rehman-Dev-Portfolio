@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-// import TechStack from "./components/TechStack";
-// import Education from "./components/Education";
 // import ExperiencePage from "./components/Experience";
 // import ProjectCard from "./components/ProjectCard";
 // import Contact from "./components/Contact";
