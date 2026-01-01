@@ -44,7 +44,7 @@ export default function Home() {
   particles: {
     color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
     links: { color: "#00d4ff", distance: 150, enable: true, opacity: 0.25, width: 1 },
-    move: { enable: true, speed: 1.2, outModes: {default:"bounce" } as const }, // <-- changed here
+    move: { enable: true, speed: 1.2, outModes: {default:"bounce" } as const }, 
     number: { density: { enable: true, area: 800 }, value: 80 },
     opacity: { value: 0.5 },
     shape: { type: "circle" },
