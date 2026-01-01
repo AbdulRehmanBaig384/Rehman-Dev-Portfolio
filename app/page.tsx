@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-// import ExperiencePage from "./components/Experience";
 // import ProjectCard from "./components/ProjectCard";
 // import Contact from "./components/Contact";
 // import IntroScreen from "./components/IntoScreen";
