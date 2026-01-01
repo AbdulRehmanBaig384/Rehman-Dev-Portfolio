@@ -126,7 +126,7 @@ export default function Home() {
     </motion.main>
   );
 }
-// import ProjectCard from "./components/ProjectCard";
+
 // import Contact from "./components/Contact";
 // import IntroScreen from "./components/IntoScreen";
 // import projects from "./data/projects";
