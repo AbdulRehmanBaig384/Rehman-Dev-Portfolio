@@ -127,8 +127,6 @@ export default function Home() {
   );
 }
 
-// // 🚀 Sections for Left Dots
-// const SECTIONS = [
 //   "hero",
 //   "about",
 //   "services",
