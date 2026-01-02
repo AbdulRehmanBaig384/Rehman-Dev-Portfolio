@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-// import Contact from "./components/Contact";
 // import IntroScreen from "./components/IntoScreen";
 // import projects from "./data/projects";
 
