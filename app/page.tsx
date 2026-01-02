@@ -127,9 +127,6 @@ export default function Home() {
   );
 }
 
-// import projects from "./data/projects";
-
-
 // // 🚀 Sections for Left Dots
 // const SECTIONS = [
 //   "hero",
