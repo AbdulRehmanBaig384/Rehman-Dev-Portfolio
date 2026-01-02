@@ -126,10 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//   "hero",
-//   "about",
-
 // export default function Home() {
 //   const [introFinished, setIntroFinished] = useState(false);
 //   const [activeSection, setActiveSection] = useState("hero");
