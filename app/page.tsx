@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//   const [activeSection, setActiveSection] = useState("hero");
 //   // Particle Background Loader
 //   const particlesInit = async (main: any) => {
 //     await loadSlim(main);
