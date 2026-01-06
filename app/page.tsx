@@ -126,10 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//   const particlesInit = async (main: any) => {
-
-
 //   // Particles Config
 //   const particlesOptions = {
 //     background: { color: { value: "transparent" } },
