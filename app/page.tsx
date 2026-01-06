@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//   // Particle Background Loader
 //   const particlesInit = async (main: any) => {
 //     await loadSlim(main);
 //     setInit(true);
