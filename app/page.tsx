@@ -126,9 +126,7 @@ export default function Home() {
     </motion.main>
   );
 }
-//   // Particles Config
-//   const particlesOptions = {
-//     background: { color: { value: "transparent" } },
+
 //     fpsLimit: 120,
 //     interactivity: {
 //       events: { onHover: { enable: true, mode: "repulse" }, resize: true },
