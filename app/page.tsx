@@ -128,9 +128,7 @@ export default function Home() {
 }
 
 //   const particlesInit = async (main: any) => {
-//     await loadSlim(main);
-//     setInit(true);
-//   };
+
 
 //   // Particles Config
 //   const particlesOptions = {
