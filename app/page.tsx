@@ -129,8 +129,6 @@ export default function Home() {
 
 //     interactivity: {
 //       events: { onHover: { enable: true, mode: "repulse" }, resize: true },
-//       modes: { repulse: { distance: 120, duration: 0.4 } },
-//     },
 //     particles: {
 //       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
 //       links: { enable: true, color: "#00d4ff", opacity: 0.3, distance: 140 },
