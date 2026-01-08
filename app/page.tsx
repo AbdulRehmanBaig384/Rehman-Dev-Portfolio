@@ -127,7 +127,7 @@ export default function Home() {
   );
 }
 
-//       move: { enable: true, speed: 1.2 },
+
 //       number: { value: 70 },
 //       shape: { type: "circle" },
 //     },
