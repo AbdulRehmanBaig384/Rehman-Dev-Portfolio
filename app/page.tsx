@@ -127,8 +127,6 @@ export default function Home() {
   );
 }
 
-//       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
-//       links: { enable: true, color: "#00d4ff", opacity: 0.3, distance: 140 },
 //       move: { enable: true, speed: 1.2 },
 //       number: { value: 70 },
 //       shape: { type: "circle" },
