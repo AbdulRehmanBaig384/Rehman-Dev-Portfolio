@@ -127,7 +127,7 @@ export default function Home() {
   );
 }
 
-//       (entries) => {
+
 //         entries.forEach((entry) => {
 //           if (entry.isIntersecting) {
 //             setActiveSection(entry.target.id);
