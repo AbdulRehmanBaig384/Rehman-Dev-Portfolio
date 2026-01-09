@@ -128,8 +128,6 @@ export default function Home() {
 }
 
 
-//     },
-//   };
 
 //   // 📌 Section Scroll Tracker (Fix)
 //   useEffect(() => {
