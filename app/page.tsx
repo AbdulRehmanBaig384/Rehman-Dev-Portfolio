@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//     const observer = new IntersectionObserver(
 //       (entries) => {
 //         entries.forEach((entry) => {
 //           if (entry.isIntersecting) {
