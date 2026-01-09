@@ -127,9 +127,6 @@ export default function Home() {
   );
 }
 
-
-
-//   // 📌 Section Scroll Tracker (Fix)
 //   useEffect(() => {
 //     const observer = new IntersectionObserver(
 //       (entries) => {
