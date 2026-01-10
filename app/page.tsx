@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//             setActiveSection(entry.target.id);
 //           }
 //         });
 //       },
