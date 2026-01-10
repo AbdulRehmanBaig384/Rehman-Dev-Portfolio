@@ -129,7 +129,7 @@ export default function Home() {
 
 //         });
 //       },
-//       { threshold: 0.35 } // Best for portfolio sizing
+
 //     );
 
 //     SECTIONS.forEach((id) => {
