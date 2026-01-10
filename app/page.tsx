@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//           if (entry.isIntersecting) {
 //             setActiveSection(entry.target.id);
 //           }
 //         });
