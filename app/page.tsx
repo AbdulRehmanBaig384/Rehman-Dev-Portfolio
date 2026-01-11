@@ -127,10 +127,6 @@ export default function Home() {
   );
 }
 
-
-//   }, []);
-
-//   return (
 //     <motion.main className="relative min-h-screen overflow-x-hidden text-white scroll-smooth">
 
 //       {/* Intro Animation */}
