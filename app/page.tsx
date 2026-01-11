@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//           <Particles id="particles" init={particlesInit} options={particlesOptions}
 //             className="absolute inset-0 -z-10"
 //           />
 
