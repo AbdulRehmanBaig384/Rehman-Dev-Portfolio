@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//           className="relative z-10"
 //         >
 //           {/* 🔹 Background Particles */}
 //           <Particles id="particles" init={particlesInit} options={particlesOptions}
