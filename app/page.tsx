@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//           animate={{ opacity: 1 }}
 //           transition={{ duration: 1.2 }}
 //           className="relative z-10"
 //         >
