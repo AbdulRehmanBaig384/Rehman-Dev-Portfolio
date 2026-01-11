@@ -128,7 +128,6 @@ export default function Home() {
 }
 
 
-//       const el = document.getElementById(id);
 //       if (el) observer.observe(el);
 //     });
 
