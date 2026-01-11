@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//             className="absolute inset-0 -z-10"
 //           />
 
 //           {/* 🔹 Left Scroll Navigation Dots */}
