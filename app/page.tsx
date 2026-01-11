@@ -126,9 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//     <motion.main className="relative min-h-screen overflow-x-hidden text-white scroll-smooth">
-
 //       {/* Intro Animation */}
 //       {!introFinished && <IntroScreen onFinish={() => setIntroFinished(true)} />}
 
