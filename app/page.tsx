@@ -128,7 +128,6 @@ export default function Home() {
 }
 
 
-//     SECTIONS.forEach((id) => {
 //       const el = document.getElementById(id);
 //       if (el) observer.observe(el);
 //     });
