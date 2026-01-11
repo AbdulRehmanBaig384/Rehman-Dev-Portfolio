@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//       {/* Intro Animation */}
 //       {!introFinished && <IntroScreen onFinish={() => setIntroFinished(true)} />}
 
 //       {/* Render Portfolio After Intro */}
