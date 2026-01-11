@@ -127,8 +127,6 @@ export default function Home() {
   );
 }
 
-
-//       if (el) observer.observe(el);
 //     });
 
 //     return () => observer.disconnect();
