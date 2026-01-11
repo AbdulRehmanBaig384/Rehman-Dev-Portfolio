@@ -126,7 +126,7 @@ export default function Home() {
     </motion.main>
   );
 }
-//           transition={{ duration: 1.2 }}
+
 //           className="relative z-10"
 //         >
 //           {/* 🔹 Background Particles */}
