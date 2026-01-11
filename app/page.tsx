@@ -127,8 +127,6 @@ export default function Home() {
   );
 }
 
-//       {/* Render Portfolio After Intro */}
-//       {introFinished && (
 //         <motion.div
 //           initial={{ opacity: 0 }}
 //           animate={{ opacity: 1 }}
