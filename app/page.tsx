@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//             {SECTIONS.map((id) => (
 //               <button
 //                 key={id}
 //                 onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
