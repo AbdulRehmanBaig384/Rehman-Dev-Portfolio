@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//           {/* <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
 //             {SECTIONS.map((id) => (
 //               <button
 //                 key={id}
