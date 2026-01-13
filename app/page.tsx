@@ -126,7 +126,7 @@ export default function Home() {
     </motion.main>
   );
 }
-//                 key={id}
+
 //                 onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
 //                 className={`w-3 h-3 rounded-full transition-all duration-300 
 //                   ${activeSection === id 
