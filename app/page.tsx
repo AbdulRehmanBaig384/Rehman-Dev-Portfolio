@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//         {SECTIONS.map((s) => (
 //           <button
 //             key={s}
 //             onClick={() =>
