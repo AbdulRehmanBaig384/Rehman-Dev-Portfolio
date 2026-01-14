@@ -126,7 +126,7 @@ export default function Home() {
     </motion.main>
   );
 }
-//                     ? "bg-[#00d4ff] scale-150 shadow-[0_0_15px_rgba(0,212,255,0.7)]" 
+
 //                     : "bg-gray-500/60 hover:scale-110"
 //                   }`}
 //               />
