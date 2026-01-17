@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//             key={s}
 //             onClick={() =>
 //               document.getElementById(s)?.scrollIntoView({ behavior: "smooth" })
 //             }
