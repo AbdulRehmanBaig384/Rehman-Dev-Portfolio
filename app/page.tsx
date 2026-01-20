@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//           />
 //         ))}
 //       </div>
 
