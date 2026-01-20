@@ -127,7 +127,6 @@ export default function Home() {
   );
 }
 
-//                 : "bg-gray-500/60 hover:scale-110"
 //             }`}
 //           />
 //         ))}
