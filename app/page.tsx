@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//       </div>
 
 //           {/* 🔹 Navbar */}
 //           <Navbar />
