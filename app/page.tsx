@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//           <Navbar />
 //           {/* Sections */}
 //           <section id="hero"><HeroSection /></section>
 //           <section id="about"><About /></section>
