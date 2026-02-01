@@ -126,7 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-//           <section id="hero"><HeroSection /></section>
 //           <section id="about"><About /></section>
 //           <section id="services"><ServicesSection /></section>
 //           <section id="tech"><TechStack /></section>
