@@ -126,8 +126,6 @@ export default function Home() {
     </motion.main>
   );
 }
-
-//           <section id="experience"><ExperiencePage /></section>
 //           <section id="projects"><ProjectCard projects={projects} /></section>
 //           <section id="contact"><Contact /></section>
 
