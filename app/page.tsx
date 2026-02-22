@@ -126,12 +126,3 @@ export default function Home() {
     </motion.main>
   );
 }
-//           <section id="projects"><ProjectCard projects={projects} /></section>
-//           <section id="contact"><Contact /></section>
-
-//         </motion.div>
-//       )}
-//     </motion.main>
-//   );
-// }
-``
