@@ -9,16 +9,18 @@ import virtualmaze from "../images/virtualmaze.png"
 import portfolio from "../images/portfolio.png"
 import voicetodo from "../images/voiceTodo.png"
 import healthmate from "../images/healthmate.jpg"
+import mathani from '../images/mathani.png'
+import postautopilot from "../images/postautopilot.png"
 export default function ProjectsPage() {
   const [init, setInit] = useState(false);
   interface Project {
-  title: string;
-  img: string;
-  desc: string;
-  github?: string;
-  deploy?: string;
-  gradient?: string;
-}
+    title: string;
+    img: string;
+    desc: string;
+    github?: string;
+    deploy?: string;
+    gradient?: string;
+  }
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -28,7 +30,7 @@ export default function ProjectsPage() {
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
-      events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
+      events: { onHover: { enable: true, mode: "repulse" }, resize: { enable: true } },
       modes: { repulse: { distance: 100, duration: 0.4 } },
     },
     particles: {
@@ -42,7 +44,7 @@ export default function ProjectsPage() {
     },
     detectRetina: true,
   };
-  const projects :Project[]= [
+  const projects: Project[] = [
     {
       title: "ShopEase – E-commerce Website",
       img: shopease.src,
@@ -52,13 +54,13 @@ export default function ProjectsPage() {
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
-    title: "Voice ToDo MERN App",
-    img: voicetodo.src, 
-    desc: "A full-stack MERN ToDo app with voice commands. Users can add, update, and delete tasks using voice input, with real-time MongoDB storage.",
-    github: "https://github.com/AbdulRehmanBaig384/Voice-Todo-Mern",
-    deploy: "https://voice-todo-mern.vercel.app",
-    gradient: "from-[#ff6a00] to-[#ee0979]",
-  },
+      title: "Voice ToDo MERN App",
+      img: voicetodo.src,
+      desc: "A full-stack MERN ToDo app with voice commands. Users can add, update, and delete tasks using voice input, with real-time MongoDB storage.",
+      github: "https://github.com/AbdulRehmanBaig384/Voice-Todo-Mern",
+      deploy: "https://voice-todo-mern.vercel.app",
+      gradient: "from-[#ff6a00] to-[#ee0979]",
+    },
     {
       title: "HealthMate AI",
       img: healthmate.src,
@@ -67,20 +69,20 @@ export default function ProjectsPage() {
       deploy: "https://healthmate.vercel.app",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
-    {
-      title: "Sloane – Medical Application",
-      img: "/sloane.jpg",
-      desc: "A digital medical platform with patient record handling, appointment booking, report storage, and healthcare analytics.",
-      github: "",
-      deploy: "",
-      gradient: "from-[#00d4ff] to-[#60a5fa]",
-    },
+    // {
+    //   title: "Sloane – Medical Application",
+    //   img: "/sloane.jpg",
+    //   desc: "A digital medical platform with patient record handling, appointment booking, report storage, and healthcare analytics.",
+    //   github: "",
+    //   deploy: "",
+    //   gradient: "from-[#00d4ff] to-[#60a5fa]",
+    // },
     {
       title: "Mathani Quran App",
-      img: "/mathani.jpg",
+      img: mathani.src,
       desc: "A full Quran app with Tafseer, Tajweed, audio recitation, bookmarks, and beautiful UI — built for smooth mobile experience.",
       github: "",
-      deploy: "",
+      deploy: "https://play.google.com/store/apps/details?id=com.mathani",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
@@ -93,10 +95,10 @@ export default function ProjectsPage() {
     },
     {
       title: "PostAutoPilot",
-      img: "/postautopilot.jpg",
+      img: postautopilot.src,
       desc: "A React Native automation app for scheduling posts, generating captions, analytics, and smart posting recommendations.",
       github: "",
-      deploy: "",
+      deploy: "https://postautopilot.vercel.app/",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
@@ -128,13 +130,13 @@ export default function ProjectsPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
-          Projects 
+          Projects
         </h2>
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80%" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
+          className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2" />
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {projects.map((p, i) => (
@@ -147,7 +149,7 @@ export default function ProjectsPage() {
               <img
                 src={p.img}
                 alt={p.title}
-                className="w-full h-full object-cover hover:scale-110 transition-all duration-500"/>
+                className="w-full h-full object-cover hover:scale-110 transition-all duration-500" />
             </div>
             {/* title */}
             <h3 className="text-2xl font-semibold text-[#60a5fa] mb-2">{p.title}</h3>
@@ -180,7 +182,7 @@ export default function ProjectsPage() {
       <motion.div
         animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 3 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60" />
     </motion.section>
   );
 }
