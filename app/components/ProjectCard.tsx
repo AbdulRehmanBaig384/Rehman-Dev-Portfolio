@@ -71,31 +71,31 @@ export default function ProjectsPage() {
       title: "Sloane – Medical Application",
       img: "/sloane.jpg",
       desc: "A digital medical platform with patient record handling, appointment booking, report storage, and healthcare analytics.",
-      github: "https://github.com/yourusername/sloane-medical",
-      deploy: "https://sloane.vercel.app",
+      github: "",
+      deploy: "",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
       title: "Mathani Quran App",
       img: "/mathani.jpg",
       desc: "A full Quran app with Tafseer, Tajweed, audio recitation, bookmarks, and beautiful UI — built for smooth mobile experience.",
-      github: "https://github.com/yourusername/mathani-quran",
-      deploy: "https://mathani-quran.vercel.app",
+      github: "",
+      deploy: "",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
       title: "Personal Portfolio",
       img: portfolio.src,
       desc: "Premium animated portfolio with 3D effects, particles, floating elements, neon gradients, and glassmorphism UI.",
-      github: "https://github.com/yourusername/portfolio",
-      deploy: "https://yourportfolio.vercel.app",
+      github: "https://github.com/abdulrehman-dev/portfolio",
+      deploy: "https://abdulrehman.dev",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
       title: "PostAutoPilot",
       img: "/postautopilot.jpg",
       desc: "A React Native automation app for scheduling posts, generating captions, analytics, and smart posting recommendations.",
-      github: "In Progress",
+      github: "",
       deploy: "",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
@@ -162,7 +162,8 @@ export default function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="px-4 py-1 rounded-full font-medium bg-gradient-to-r from-[#00d4ff] to-[#60a5fa] text-white shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:brightness-125 transition">
                   GitHub
-                )}
+                </a>
+              )}
               {p.deploy && (
                 <a
                   href={p.deploy}

@@ -5,10 +5,10 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
-  { label: "Tech Stack", href: "#tech" },
+  // { label: "Tech Stack", href: "#tech" },
   { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
+  // { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -46,9 +46,9 @@ export default function Navbar() {
         <div className="container mx-auto px-6 flex items-center justify-between">
           <motion.div
             whileHover={{ scale: 1.1 }}
-            className="text-lg font-bold text-transparent bg-clip-text
+            className="text-2xl font-black text-transparent bg-clip-text
             bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#a855f7] cursor-pointer">
-            Abdul Rehman
+            AR.
           </motion.div>
           <div className="hidden md:flex items-center gap-8 text-white/80">
             {navLinks.map(({ label, href }) => (
@@ -56,7 +56,7 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 whileHover={{ scale: 1.1 }}
-                className="relative transition-all">
+                className={`relative transition-all py-1 ${active === href ? "text-white font-medium" : "hover:text-white"}`}>
                 {label}
                 {active === href && (
                   <motion.span
@@ -67,6 +67,9 @@ export default function Navbar() {
                 )}
               </motion.a>
             ))}
+            <a href="mailto:rehmanbaig456@gmail.com" className="ml-4 px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all">
+              Hire Me
+            </a>
           </div>
           <button className="text-white md:hidden" onClick={() => setMenuOpen(true)}>
             <Menu size={30} />
@@ -88,10 +91,13 @@ export default function Navbar() {
               href={href}
               onClick={() => setMenuOpen(false)}
               whileHover={{ x: 10 }}
-              className={`transition-all ${active === href ? "text-[#60a5fa]" : ""}`}>
+              className={`transition-all ${active === href ? "text-[#60a5fa] font-semibold" : "text-white/80"}`}>
               {label}
             </motion.a>
           ))}
+          <a href="mailto:rehmanbaig456@gmail.com" onClick={() => setMenuOpen(false)} className="mt-4 px-6 py-3 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full shadow-lg">
+            Hire Me
+          </a>
         </div>
       </motion.div>
     </>

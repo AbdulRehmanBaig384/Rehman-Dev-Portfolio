@@ -6,6 +6,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 const HeroSection: React.FC = () => {
   const [init, setInit] = useState(false);
+  const [imgError, setImgError] = useState(false);
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -57,24 +58,50 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 -z-30 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
       <div className="side-glow left" />
       <div className="side-glow right" />
-      <div className="z-10 px-6">
-        <h1 className="mb-4 text-5xl font-extrabold text-transparent sm:text-6xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text drop-shadow-lg">
-          Hi, I’m Abdul Rehman Baig
-        </h1>
-        <p className="max-w-2xl mx-auto mb-8 text-lg leading-relaxed text-gray-300 sm:text-xl">
-          Full Stack Developer — Building modern and scalable web apps using{" "}
-          <span className="font-medium text-blue-400">
-            React, Node.js, Express, and MongoDB
-          </span>
-          .
-        </p>
+      <div className="z-10 px-6 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 w-full">
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="mb-4 text-5xl font-extrabold text-transparent sm:text-6xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text drop-shadow-lg">
+            Hi, I’m Abdul Rehman Baig
+          </h1>
+          <p className="max-w-2xl mx-auto md:mx-0 mb-8 text-lg leading-relaxed text-gray-300 sm:text-xl">
+            Full Stack Developer — Building modern and scalable web apps using{" "}
+            <span className="font-medium text-blue-400">
+              React, Node.js, Express, and MongoDB
+            </span>
+            .
+          </p>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
-          <button className="glow-btn"> Hire Me</button>
-          <button className="px-6 py-3 font-semibold transition duration-300 border border-blue-400 rounded-full hover:bg-blue-500/10 cursor-pointer">
-             Download Resume
-          </button>
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <button className="glow-btn"> Hire Me</button>
+            <a
+              href="/Abdul_Rehman_Baig_Resume1.pdf"
+              download="Abdul_Rehman_Baig_Resume.pdf"
+              className="px-6 py-3 font-semibold transition duration-300 border border-blue-400 rounded-full hover:bg-blue-500/10 cursor-pointer inline-flex items-center justify-center"
+            >
+               Download Resume
+            </a>
+          </div>
+        </div>
+
+        {/* Profile Image Column */}
+        <div className="flex-1 flex justify-center md:justify-end mb-8 md:mb-0">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-gradient-to-tr from-[#00d4ff] via-[#3b82f6] to-[#7c5cff] shadow-[0_0_30px_rgba(0,212,255,0.4)] animate-float-slow">
+            <div className="w-full h-full rounded-full overflow-hidden bg-gray-900 border-[6px] border-[#0a0a0a] relative flex items-center justify-center">
+              {!imgError ? (
+                <img 
+                  src="/profile.jpg" 
+                  alt="Abdul Rehman Baig" 
+                  className="w-full h-full object-cover"
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <div className="text-6xl font-bold bg-gradient-to-br from-[#00d4ff] to-[#7c5cff] bg-clip-text text-transparent drop-shadow-md">
+                  AR
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute w-48 h-48 rounded-full bg-blue-500/20 blur-3xl top-10 left-10 animate-float-slow" />

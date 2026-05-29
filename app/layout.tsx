@@ -24,6 +24,22 @@ export const metadata: Metadata = {
     "PostgreSQL",
     "TypeScript",
   ],
+  openGraph: {
+    title: "Abdul Rehman Baig — Full-Stack Developer",
+    description: "Portfolio of Abdul Rehman Baig — Full-Stack Developer (React | Node | MongoDB | PostgreSQL)",
+    url: "https://abdulrehman.dev",
+    siteName: "Abdul Rehman Portfolio",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Abdul Rehman Baig - Full Stack Developer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,

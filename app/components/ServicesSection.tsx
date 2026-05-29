@@ -10,24 +10,24 @@ const services = [
   {
     title: "Frontend Development",
     description:
-      "Responsive and interactive UIs using React.js, HTML, CSS, and modern frameworks.",
+      "Responsive and interactive UIs using React.js, HTML, CSS, and modern frameworks. I focus on pixel-perfect layouts with Tailwind CSS and smooth animations using Framer Motion.",
     icon: <Code size={40} className="text-blue-400" />,
   },{
     title: "Backend Development",
     description:
-      "Robust server-side logic, APIs, and integrations using Node.js and Express.",
+      "Robust server-side logic, APIs, and integrations using Node.js and Express. I implement secure RESTful architectures, authentication with JWT, and ensure scalable performance.",
     icon: <Server size={40} className="text-blue-400" />,
   },
   {
     title: "Database Management",
     description:
-      "Designing and managing SQL & NoSQL databases efficiently.",
+      "Designing and managing SQL & NoSQL databases efficiently. My approach includes using MongoDB for flexible document storage and optimizing queries for high-speed data retrieval.",
     icon: <Database size={40} className="text-blue-400" />,
   },
   {
     title: "Mobile & Responsive Apps",
     description:
-      "Mobile-friendly and responsive applications with seamless UX.",
+      "Mobile-friendly and responsive applications with seamless UX. I ensure cross-platform compatibility and fluid touch interactions, so apps feel native on any device.",
     icon: <Smartphone size={40} className="text-blue-400" />,
   },
 ];

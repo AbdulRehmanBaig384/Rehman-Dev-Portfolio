@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaEnvelope, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { SiKaggle } from "react-icons/si";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions } from "@tsparticles/engine";
@@ -32,17 +33,20 @@ export default function Footer() {
     detectRetina: true,
   };
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
-    { label: "Experience", href: "/experience" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "Tech Stack", href: "#tech" },
+    { label: "Education", href: "#education" },
+    { label: "Experience", href: "#experience" },
+    { label: "Services", href: "#services" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
   const socialLinks = [
     { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/abdul-rehman-baig-/" },
     { icon: <FaGithub />, href: "https://github.com/AbdulRehmanBaig384" },
     { icon: <FaEnvelope />, href: "mailto:rehmanbaig456@gmail.com" },
-    { icon: <FaFacebook />, href: "https://facebook.com/yourprofile" },
+    { icon: <SiKaggle />, href: "https://www.kaggle.com/rehamanengineer" },
   ];
   return (
     <footer className="relative overflow-hidden text-gray-300">
@@ -108,7 +112,7 @@ export default function Footer() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}>
-        © {new Date().getFullYear()} Abdul Rehman — All Rights Reserved.
+        © 2026 Abdul Rehman — All Rights Reserved.
       </motion.div>
       <style jsx>{`
         @keyframes float-slow {

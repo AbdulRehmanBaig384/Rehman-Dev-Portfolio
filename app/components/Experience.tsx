@@ -44,17 +44,40 @@ export default function ExperiencePage() {
   };
   const experiences = [
     {
+      title: "Junior React Developer — HZTech",
+      subtitle: "Onsite | February 2026 – Present",
+      details: [
+        "Building and maintaining responsive React.js and React Native interfaces",
+        "Working with Tailwind CSS for UI consistency and responsive design",
+        "State management using Redux Toolkit, Zustand, and Context API",
+        "Strong understanding of React concepts: hooks, component lifecycle, props, memoization, and custom hooks",
+        "Mobile app development using React Native with Expo",
+        "Backend integration using Firebase (Authentication, Firestore, Storage)",
+        "Building REST APIs with Node.js and Express.js",
+        "Experience with NestJS for scalable backend architecture",
+        "Working with Next.js for SSR and SSG based web applications",
+        "Collaborating with the team on real client projects"
+      ],
+      gradient: "from-[#00d4ff] to-[#60a5fa]",
+    },
+    {
       title: "Intern — HZTech",
-      subtitle: "Onsite | React Developer",
-      details:
-        "Built responsive, animated front-end interfaces using React.js and Tailwind CSS. Focused on UI/UX consistency and dynamic motion design.",
+      subtitle: "Onsite | October 2025 – January 2026",
+      details: [
+        "Learned and applied core React concepts: components, props, state, and hooks",
+        "Built responsive UIs using React.js and Tailwind CSS",
+        "Practiced state management using Context API and basic Redux",
+        "Worked on React Native fundamentals for mobile UI components",
+        "Focused on UI/UX consistency and dynamic motion design with Framer Motion"
+      ],
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
       title: "Remote Internship — Elevopathways",
-      subtitle: "Remote | Cairo, Egypt",
-      details:
-        "Collaborated remotely on React-based projects, integrating backend APIs and ensuring performance optimization.",
+      subtitle: "Remote | Cairo, Egypt | 2025",
+      details: [
+        "Collaborated remotely on React-based projects, integrating backend APIs and ensuring performance optimization."
+      ],
       gradient: "from-[#7c3aed] to-[#00e0ff]",
     },
   ];
@@ -80,7 +103,7 @@ export default function ExperiencePage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
-          Experience 💼
+          Experience
         </h2>
         <motion.div
           initial={{ width: 0 }}
@@ -114,9 +137,17 @@ export default function ExperiencePage() {
                   {exp.title}
                 </h3>
                 <p className="text-sm text-zinc-400">{exp.subtitle}</p>
-                <p className="mt-3 leading-relaxed text-zinc-300">
-                  {exp.details}
-                </p>
+                <div className="mt-3 leading-relaxed text-zinc-300">
+                  {Array.isArray(exp.details) ? (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {exp.details.map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>{exp.details}</p>
+                  )}
+                </div>
               </motion.div>
             </motion.div>
           ))}
