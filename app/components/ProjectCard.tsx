@@ -90,7 +90,7 @@ export default function ProjectsPage() {
       img: portfolio.src,
       desc: "Premium animated portfolio with 3D effects, particles, floating elements, neon gradients, and glassmorphism UI.",
       github: "https://github.com/abdulrehman-dev/portfolio",
-      deploy: "https://abdulrehman.dev",
+      deploy: "https://rehmanportfolio384.netlify.app/",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
