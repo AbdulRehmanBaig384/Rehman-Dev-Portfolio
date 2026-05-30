@@ -50,7 +50,7 @@ export default function ProjectsPage() {
       img: shopease.src,
       desc: "A modern e-commerce platform featuring product listings, cart system, checkout flow, user authentication, and smooth UI interactions.",
       github: "https://github.com/AbdulRehmanBaig384/ShopEase-Store",
-      deploy: "https://shopease.vercel.app",
+      deploy: "https://shopeasywebsite1.netlify.app/",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
     {
