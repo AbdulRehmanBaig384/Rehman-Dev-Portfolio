@@ -4,12 +4,11 @@ export type Project={
   description:string;
   tech:string[];
   github?:string;
-  demo?: string;
-  image?: string;
-  highlight?: string; 
+  demo?:string;
+  image?:string;
+  highlight?:string; 
 };
-
-export const projects: Project[] = [
+export const projects: Project[]=[
   {
     id: "ecommerce-mern",
     title: "E-Commerce MERN App",
