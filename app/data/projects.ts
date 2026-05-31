@@ -12,8 +12,7 @@ export const projects: Project[]=[
   {
     id: "ecommerce-mern",
     title: "E-Commerce MERN App",
-    description:
-      "A complete e-commerce solution featuring secure authentication, product management, real-time cart updates, and Stripe-based payment integration.",
+    description:"A complete e-commerce solution featuring secure authentication, product management, real-time cart updates, and Stripe-based payment integration.",
     tech: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
     github: "https://github.com/abdulrehman-dev/ecommerce-mern",
     demo: "https://ecommerce.abdulrehman.dev",
