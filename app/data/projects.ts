@@ -43,15 +43,13 @@ export const projects: Project[]=[
   },
   {
     id: "portfolio-next",
-    title: "Portfolio (Next.js + Framer Motion)",
-    description:
-      "My personal portfolio built with Next.js 14, TypeScript, and Framer Motion — smooth animations, dark theme, and responsive UI.",
+    title:"Portfolio (Next.js + Framer Motion)",
+    description:"My personal portfolio built with Next.js 14, TypeScript, and Framer Motion — smooth animations, dark theme, and responsive UI.",
     tech: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
     github: "https://github.com/abdulrehman-dev/portfolio",
     demo: "https://abdulrehman.dev",
     image: "/images/projects/portfolio.webp",
     highlight: "Personal Project",
-  },
-];
+  },];
 
 export default projects;
