@@ -46,8 +46,8 @@ export const projects: Project[]=[
     tech:["Next.js","TypeScript","Framer Motion","Tailwind CSS"],
     github:"https://github.com/abdulrehman-dev/portfolio",
     demo:"https://abdulrehman.dev",
-    image: "/images/projects/portfolio.webp",
-    highlight: "Personal Project",
+    image:"/images/projects/portfolio.webp",
+    highlight:"Personal Project",
   },];
 
 export default projects;
