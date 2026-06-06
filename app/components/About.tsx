@@ -1,6 +1,6 @@
 "use client";
 import {motion,Variants} from "framer-motion";
-export default function About() {
+export default function About(){
   const sectionVariants:Variants = {
   hidden:{opacity:0,y:30},
   show:{
@@ -54,12 +54,11 @@ export default function About() {
           meaningful impact through innovation and collaboration.
         </p>
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
+          whileHover={{scale: 1.05 }}
+          whileTap={{scale: 0.97 }}
           className="px-8 py-1 mb-4 mt-2 text-sm font-medium text-white transition-all rounded-full shadow-lg glow-btn bg-gradient-to-r from-blue-600 to-cyan-500">
           Let’s Connect 
         </motion.button>
       </motion.div> 
     </motion.section>
-  );
-}
+  );}
