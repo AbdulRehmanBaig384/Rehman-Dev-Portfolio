@@ -1,7 +1,7 @@
 "use client";
 import {motion,Variants} from "framer-motion";
 export default function About(){
-  const sectionVariants:Variants = {
+  const sectionVariants:Variants={
   hidden:{opacity:0,y:30},
   show:{
     opacity:1,
@@ -18,8 +18,8 @@ export default function About(){
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        whileInView={{ opacity:1, y: 0 }}
+        transition={{ duration:0.7,ease: "easeOut" }}
         viewport={{ once: true }}
           className=" mb-8 text-5xl font-extrabold bg-gradient-to-r from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-xl">
         About Me
