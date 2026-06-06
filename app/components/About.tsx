@@ -2,11 +2,11 @@
 import {motion,Variants} from "framer-motion";
 export default function About() {
   const sectionVariants:Variants = {
-  hidden: {opacity:0,y:30},
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" as const },
+  hidden:{opacity:0,y:30},
+  show:{
+    opacity:1,
+    y:0,
+    transition:{duration:0.7,ease:"easeOut"as const },
   },};
   return (
     <motion.section
