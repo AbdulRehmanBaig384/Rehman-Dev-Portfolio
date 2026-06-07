@@ -8,12 +8,12 @@ import type {ISourceOptions} from "@tsparticles/engine";
 export default function ExperiencePage() {
   const [init,setInit]=useState(false);
 
-  useEffect(() => {
+  useEffect(()=>{
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => setInit(true));
-  }, []);
-  const particlesOptions: ISourceOptions = {
+    }).then(()=>setInit(true));
+  },[]);
+  const particlesOptions:ISourceOptions={
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
     interactivity: {
