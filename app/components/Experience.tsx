@@ -70,7 +70,7 @@ export default function ExperiencePage() {
         "Worked on React Native fundamentals for mobile UI components",
         "Focused on UI/UX consistency and dynamic motion design with Framer Motion"
       ],
-      gradient: "from-[#00d4ff] to-[#60a5fa]",
+      gradient:"from-[#00d4ff] to-[#60a5fa]",
     },
     {
       title: "Remote Internship — Elevopathways",
@@ -84,14 +84,14 @@ export default function ExperiencePage() {
   return (
     <motion.section
       id="experience"
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
+      initial={{opacity:0,y:25 }}
+      whileInView={{opacity: 1,y:0}}
+      transition={{duration: 0.8 }}
+      viewport={{once:true}}
       className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
     {/*Particles movement  */}
-      {init && (
+      {init &&(
         <div className="absolute inset-0 -z-10 opacity-80">
           <Particles id="experienceParticles" options={particlesOptions} />
         </div>
