@@ -84,9 +84,9 @@ export default function ExperiencePage() {
   return (
     <motion.section
       id="experience"
-      initial={{opacity:0,y:25 }}
-      whileInView={{opacity: 1,y:0}}
-      transition={{duration: 0.8 }}
+      initial={{opacity:0,y:25}}
+      whileInView={{opacity:1,y:0}}
+      transition={{duration:0.8}}
       viewport={{once:true}}
       className="relative flex flex-col items-center justify-center py-24 overflow-hidden text-white">
       <div className="absolute inset-0 -z-20 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
@@ -108,7 +108,7 @@ export default function ExperiencePage() {
         <motion.div
           initial={{width:0}}
           whileInView={{width:"80%"}}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration:0.8,ease:"easeInOut"}}
           className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
 
@@ -116,11 +116,11 @@ export default function ExperiencePage() {
         <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] bg-gradient-to-b from-[#00d4ff] via-[#60a5fa] to-[#7c3aed] h-full opacity-50" />
 
         <div className="space-y-14">
-          {experiences.map((exp, i) => (
+          {experiences.map((exp,i)=>(
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{opacity:0,y:30}}
+              whileInView={{ opacity:1, y: 0 }}
               transition={{ delay: i * 0.25, duration: 0.6 }}
               viewport={{ once: true }}
               className={`relative md:w-1/2 ${
