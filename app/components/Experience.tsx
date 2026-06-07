@@ -18,10 +18,10 @@ export default function ExperiencePage() {
     fpsLimit:120,
     interactivity:{
       events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
-      modes: { repulse: { distance: 100, duration: 0.4 } },
+      modes: {repulse:{distance:100,duration:0.4}},
     },
-    particles: {
-      color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
+    particles:{
+      color:{value:["#00d4ff","#007bff","#7c5cff"] },
       links: {
         color: "#00d4ff",
         distance: 130,
