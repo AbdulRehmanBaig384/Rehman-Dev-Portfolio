@@ -17,8 +17,8 @@ export default function ExperiencePage() {
     background:{color:{value:"transparent"}},
     fpsLimit:120,
     interactivity:{
-      events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
-      modes: {repulse:{distance:100,duration:0.4}},
+      events:{onHover:{enable:true,mode:"repulse"}, resize:{enable: true }},
+      modes:{repulse:{distance:100,duration:0.4}},
     },
     particles:{
       color:{value:["#00d4ff","#007bff","#7c5cff"] },
