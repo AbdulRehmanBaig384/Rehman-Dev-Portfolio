@@ -9,14 +9,14 @@ export default function ExperiencePage() {
   const [init,setInit]=useState(false);
 
   useEffect(()=>{
-    initParticlesEngine(async (engine) => {
+    initParticlesEngine(async(engine) => {
       await loadSlim(engine);
     }).then(()=>setInit(true));
   },[]);
   const particlesOptions:ISourceOptions={
-    background: { color: { value: "transparent" } },
-    fpsLimit: 120,
-    interactivity: {
+    background:{color:{value:"transparent"}},
+    fpsLimit:120,
+    interactivity:{
       events: { onHover: { enable: true, mode: "repulse" }, resize:{enable: true }},
       modes: { repulse: { distance: 100, duration: 0.4 } },
     },
