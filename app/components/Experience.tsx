@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import {useState,useEffect} from "react";
+import {motion} from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions } from "@tsparticles/engine";
