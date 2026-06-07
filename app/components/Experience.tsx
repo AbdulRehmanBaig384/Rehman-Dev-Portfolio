@@ -3,10 +3,10 @@ import {useState,useEffect} from "react";
 import {motion} from "framer-motion";
 import Particles,{initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
-import type { ISourceOptions } from "@tsparticles/engine";
+import type {ISourceOptions} from "@tsparticles/engine";
 
 export default function ExperiencePage() {
-  const [init, setInit] = useState(false);
+  const [init,setInit]=useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
