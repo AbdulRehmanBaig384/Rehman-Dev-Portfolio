@@ -99,15 +99,15 @@ export default function ExperiencePage() {
       
       {/* heading */}
       <motion.div className="relative mt-10 mb-16 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}>
+        initial={{opacity:0,y:-20}}
+        whileInView={{opacity:1,y:0}}
+        transition={{duration:0.7}}>
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#60a5fa] via-[#00e0ff] to-[#7c3aed] bg-clip-text text-transparent">
           Experience
         </h2>
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "80%" }}
+          initial={{width:0}}
+          whileInView={{width:"80%"}}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute left-1/2 -bottom-3 h-[3px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] rounded-full -translate-x-1/2"/>
       </motion.div>
