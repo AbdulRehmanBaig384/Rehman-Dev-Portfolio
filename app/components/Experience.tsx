@@ -120,11 +120,11 @@ export default function ExperiencePage() {
             <motion.div
               key={i}
               initial={{opacity:0,y:30}}
-              whileInView={{ opacity:1, y: 0 }}
-              transition={{ delay: i * 0.25, duration: 0.6 }}
-              viewport={{ once: true }}
+              whileInView={{opacity:1, y: 0 }}
+              transition={{delay: i * 0.25, duration: 0.6 }}
+              viewport={{once: true }}
               className={`relative md:w-1/2 ${
-                i % 2 === 0 ? "ml-auto pr-10" : "mr-auto pl-10"
+                i % 2 ===0 ? "ml-auto pr-10" : "mr-auto pl-10"
               }`}>
               <div
                 className={`absolute top-3 w-6 h-6 rounded-full bg-gradient-to-br ${exp.gradient} shadow-[0_0_30px_rgba(0,183,255,0.6)] border border-white/20`}/>
@@ -154,8 +154,8 @@ export default function ExperiencePage() {
         </div>
       </div>
       <motion.div
-        animate={{ opacity: [0.4, 0.8, 0.4], y: [0, -10, 0] }}
-        transition={{ repeat: Infinity, duration: 3 }}
+        animate={{opacity: [0.4, 0.8, 0.4], y: [0,-10,0]}}
+        transition={{repeat:Infinity,duration:3}}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
     </motion.section>
   );
