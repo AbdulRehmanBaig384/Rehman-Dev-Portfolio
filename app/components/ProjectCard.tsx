@@ -11,7 +11,7 @@ import voicetodo from "../images/voiceTodo.png"
 import healthmate from "../images/healthmate.jpg"
 import mathani from '../images/mathani.png'
 import postautopilot from "../images/postautopilot.png"
-import studysync from "../images/studysync.png"
+import studysync from "../images/StudySync.png"
 export default function ProjectsPage() {
   const [init, setInit] = useState(false);
   interface Project {
