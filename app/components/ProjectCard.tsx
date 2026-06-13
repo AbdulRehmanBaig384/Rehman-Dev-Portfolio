@@ -11,6 +11,7 @@ import voicetodo from "../images/voiceTodo.png"
 import healthmate from "../images/healthmate.jpg"
 import mathani from '../images/mathani.png'
 import postautopilot from "../images/postautopilot.png"
+import studysync from "../images/studysync.png"
 export default function ProjectsPage() {
   const [init, setInit] = useState(false);
   interface Project {
@@ -46,6 +47,30 @@ export default function ProjectsPage() {
   };
   const projects: Project[] = [
     {
+      title: "Mathani Quran App",
+      img: mathani.src,
+      desc: "A full Quran app with Tafseer, Tajweed, audio recitation, bookmarks, and beautiful UI — built for smooth mobile experience.",
+      github: "",
+      deploy: "https://play.google.com/store/apps/details?id=com.mathani",
+      gradient: "from-[#00d4ff] to-[#60a5fa]",
+    },
+    {
+      title: "PostAutoPilot",
+      img: postautopilot.src,
+      desc: "A React Native automation app for scheduling posts, generating captions, analytics, and smart posting recommendations.",
+      github: "",
+      deploy: "https://postautopilot.vercel.app/",
+      gradient: "from-[#00d4ff] to-[#60a5fa]",
+    },
+    {
+      title: "StudySync Platform",
+      img: studysync.src, // StudySync image import karna hoga
+      desc: "A full-stack collaborative learning platform built with MERN stack. Features include user authentication, study groups, real-time discussions, resource sharing, progress tracking, and a modern responsive UI for students.",
+      github: "https://github.com/AbdulRehmanBaig384/StudySync", // apna GitHub link
+      deploy: "https://study-sync-platform.vercel.app/",
+      gradient: "from-[#06b6d4] to-[#3b82f6]",
+    },
+    {
       title: "ShopEase – E-commerce Website",
       img: shopease.src,
       desc: "A modern e-commerce platform featuring product listings, cart system, checkout flow, user authentication, and smooth UI interactions.",
@@ -69,22 +94,7 @@ export default function ProjectsPage() {
       deploy: "https://healthmate.vercel.app",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
-    // {
-    //   title: "Sloane – Medical Application",
-    //   img: "/sloane.jpg",
-    //   desc: "A digital medical platform with patient record handling, appointment booking, report storage, and healthcare analytics.",
-    //   github: "",
-    //   deploy: "",
-    //   gradient: "from-[#00d4ff] to-[#60a5fa]",
-    // },
-    {
-      title: "Mathani Quran App",
-      img: mathani.src,
-      desc: "A full Quran app with Tafseer, Tajweed, audio recitation, bookmarks, and beautiful UI — built for smooth mobile experience.",
-      github: "",
-      deploy: "https://play.google.com/store/apps/details?id=com.mathani",
-      gradient: "from-[#00d4ff] to-[#60a5fa]",
-    },
+
     {
       title: "Personal Portfolio",
       img: portfolio.src,
@@ -93,14 +103,7 @@ export default function ProjectsPage() {
       deploy: "https://rehmanportfolio384.netlify.app/",
       gradient: "from-[#00d4ff] to-[#60a5fa]",
     },
-    {
-      title: "PostAutoPilot",
-      img: postautopilot.src,
-      desc: "A React Native automation app for scheduling posts, generating captions, analytics, and smart posting recommendations.",
-      github: "",
-      deploy: "https://postautopilot.vercel.app/",
-      gradient: "from-[#00d4ff] to-[#60a5fa]",
-    },
+
     {
       title: "Virtual Maze Solver",
       img: virtualmaze.src,
