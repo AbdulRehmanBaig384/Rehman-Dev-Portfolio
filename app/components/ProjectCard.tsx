@@ -8,7 +8,6 @@ import shopease from "../images/shopease.png"
 import virtualmaze from "../images/virtualmaze.png"
 import portfolio from "../images/portfolio.png"
 import voicetodo from "../images/voiceTodo.png"
-import healthmate from "../images/healthmate.jpg"
 import mathani from '../images/mathani.png'
 import postautopilot from "../images/postautopilot.png"
 import studysync from "../images/StudySync.png"
@@ -86,15 +85,6 @@ export default function ProjectsPage() {
       deploy: "https://voice-todo-mern.vercel.app",
       gradient: "from-[#ff6a00] to-[#ee0979]",
     },
-    {
-      title: "HealthMate AI",
-      img: healthmate.src,
-      desc: "AI-powered medical assistant that helps users track health reports, symptoms, prescriptions, and provides smart health insights.",
-      github: "https://github.com/AbdulRehmanBaig384/HealthMate-AI",
-      deploy: "https://healthmate.vercel.app",
-      gradient: "from-[#00d4ff] to-[#60a5fa]",
-    },
-
     {
       title: "Personal Portfolio",
       img: portfolio.src,
