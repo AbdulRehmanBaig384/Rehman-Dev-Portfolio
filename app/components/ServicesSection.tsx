@@ -9,13 +9,11 @@ import type {ISourceOptions} from "@tsparticles/engine";
 const services=[
   {
     title: "Frontend Development",
-    description:
-      "Responsive and interactive UIs using React.js, HTML, CSS, and modern frameworks. I focus on pixel-perfect layouts with Tailwind CSS and smooth animations using Framer Motion.",
+    description:"Responsive and interactive UIs using React.js, HTML, CSS, and modern frameworks. I focus on pixel-perfect layouts with Tailwind CSS and smooth animations using Framer Motion.",
     icon: <Code size={40} className="text-blue-400" />,
   },{
-    title: "Backend Development",
-    description:
-      "Robust server-side logic, APIs, and integrations using Node.js and Express. I implement secure RESTful architectures, authentication with JWT, and ensure scalable performance.",
+    title:"Backend Development",
+    description:"Robust server-side logic, APIs, and integrations using Node.js and Express. I implement secure RESTful architectures, authentication with JWT, and ensure scalable performance.",
     icon: <Server size={40} className="text-blue-400" />,
   },
   {
