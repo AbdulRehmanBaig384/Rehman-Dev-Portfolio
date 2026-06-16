@@ -3,7 +3,7 @@ import React,{useState,useEffect}from "react";
 import {motion,Variants} from "framer-motion";
 import Particles,{initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
-import { Code, Server, Database, Smartphone } from "lucide-react";
+import {Code,Server,Database,Smartphone} from "lucide-react";
 import type { ISourceOptions } from "@tsparticles/engine";
 
 const services = [
