@@ -124,14 +124,14 @@ const ServicesSection: React.FC = () => {
             key={index}
             variants={cardVariants}
             whileHover={{
-              scale: 1.08,
-              y: -5,
-              boxShadow: "0 0 25px rgba(0,183,255,0.5)",
+              scale:1.08,
+              y:-5,
+              boxShadow:"0 0 25px rgba(0,183,255,0.5)",
             }}
             className="p-8 transition-transform duration-300 border border-blue-500 shadow-xl cursor-pointer glass rounded-2xl backdrop-blur-md">
             <motion.div
               className="mb-4"
-              whileHover={{ rotate: [0, 10, -10, 0] }}
+              whileHover={{ rotate: [0, 10, -10, 0]}}
               transition={{ duration: 0.6 }}>
               {service.icon}
             </motion.div>
@@ -147,6 +147,5 @@ const ServicesSection: React.FC = () => {
         transition={{ repeat: Infinity, duration: 3 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[240px] h-[2px] bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#60a5fa] blur-sm rounded-full opacity-60"/>
     </motion.section>
-  );
-};
+  );};
 export default ServicesSection;
