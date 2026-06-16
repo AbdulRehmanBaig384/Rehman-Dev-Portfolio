@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import React,{useState,useEffect}from "react";
 import { motion,Variants } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
