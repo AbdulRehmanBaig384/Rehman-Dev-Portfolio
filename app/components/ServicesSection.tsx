@@ -32,15 +32,15 @@ const services=[
   },
 ];
 const containerVariants:Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
+  hidden:{},
+  show:{
+    transition:{
+      staggerChildren:0.15,
     },
   },
 };
 const cardVariants:Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  hidden:{opacity:0,y:30, scale: 0.95 },
   show: {
     opacity: 1,
     y: 0,
