@@ -1,63 +1,20 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css"
-import Footer from "./components/Footer";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
+import ExperienceProvider from "./components/layout/ExperienceProvider";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl = "https://rehmanportfolio384.netlify.app";
 export const metadata: Metadata = {
-  title: "Abdul Rehman Baig — Full-Stack Developer",
-  description:
-    "Portfolio of Abdul Rehman Baig — Full-Stack Developer (React | Node | MongoDB | PostgreSQL)",
-  keywords: [
-    "Abdul Rehman",
-    "Full-Stack Developer",
-    "React",
-    "Node.js",
-    "MongoDB",
-    "PostgreSQL",
-    "TypeScript",
-  ],
-  openGraph: {
-    title: "Abdul Rehman Baig — Full-Stack Developer",
-    description: "Portfolio of Abdul Rehman Baig — Full-Stack Developer (React | Node | MongoDB | PostgreSQL)",
-    url: "https://abdulrehman.dev",
-    siteName: "Abdul Rehman Portfolio",
-    images: [
-      {
-        url: "/profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Abdul Rehman Baig - Full Stack Developer",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+  metadataBase: new URL(siteUrl),
+  title: "Abdul Rehman Baig — Full-Stack Software Engineer",
+  description: "Abdul Rehman Baig is a full-stack software engineer in Karachi, building thoughtful web and mobile experiences with React, Next.js, Node.js, and React Native.",
+  keywords: ["Abdul Rehman Baig", "Full-Stack Software Engineer", "React", "Next.js", "React Native", "Karachi", "Portfolio"],
+  authors: [{ name: "Abdul Rehman Baig" }],
+  alternates: { canonical: "/" },
+  openGraph: { title: "Abdul Rehman Baig — Beyond the Ordinary", description: "Engineering meets creative thinking. Explore my web, mobile, and full-stack projects.", url: siteUrl, siteName: "Abdul Rehman Baig", locale: "en_US", type: "website", images: [{ url: "/social-preview.png", width: 1200, height: 630, alt: "Abdul Rehman Baig — Full-Stack Software Engineer" }] },
+  twitter: { card: "summary_large_image", title: "Abdul Rehman Baig — Full-Stack Software Engineer", images: ["/social-preview.png"] },
+  robots: { index: true, follow: true },
 };
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative overflow-x-hidden bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#071428] to-[#050409]`}>
-        <div className="absolute inset-0 bg-glow -z-10"></div>
-        <main className="min-h-screen">
-            <div className="side-glow left"></div>
-            <div className="side-glow right"></div>
-            {children}
-        </main>
-        <Footer/>
-      </body>
-    </html>
-  );
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#080914" };
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><body><ExperienceProvider>{children}</ExperienceProvider><noscript><style>{".reveal-3d,.hero-copy,.hero-visual{opacity:1!important;transform:none!important}"}</style></noscript></body></html>;
 }

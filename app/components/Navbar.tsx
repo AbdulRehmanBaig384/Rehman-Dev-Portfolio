@@ -1,105 +1,52 @@
-'use client';
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  // { label: "Tech Stack", href: "#tech" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  // { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+
+const links = [{ label: "Home", id: "hero" }, { label: "About", id: "about" }, { label: "Projects", id: "projects" }, { label: "Experience", id: "experience" }, { label: "Contact", id: "contact" }];
+
 export default function Navbar() {
-  const [active, setActive] = useState("#hero");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("hero");
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDialogElement>(null);
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 35 });
+  const reduced = useReducedMotion();
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(`#${entry.target.id}`);
-      }),
-      { threshold: 0.4 }
-    );
-    navLinks.forEach(({ href }) => {
-      const el = document.querySelector(href);
-      if (el) observer.observe(el);
-    });
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+    }, { rootMargin: "-12% 0px -65% 0px", threshold: 0 });
+    document.querySelectorAll("main section[id]").forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const menu = menuRef.current;
+    if (!menu) return;
+    if (open) { menu.showModal(); const previous = document.body.style.overflow; document.body.style.overflow = "hidden"; return () => { document.body.style.overflow = previous; }; }
+    if (menu.open) menu.close();
+  }, [open]);
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 900px)");
+    const closeDesktop = () => { if (media.matches) setOpen(false); };
+    media.addEventListener("change", closeDesktop);
+    return () => media.removeEventListener("change", closeDesktop);
   }, []);
-
-  return (
-    <>
-      <motion.nav
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        className={`fixed w-full top-0 z-[999] transition-all duration-500 backdrop-blur-xl border-b border-white/10
-        ${scrolled ? "bg-black/60 py-2" : "bg-black/40 py-4"}
-      `}>
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="text-2xl font-black text-transparent bg-clip-text
-            bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#a855f7] cursor-pointer">
-            AR.
-          </motion.div>
-          <div className="hidden md:flex items-center gap-8 text-white/80">
-            {navLinks.map(({ label, href }) => (
-              <motion.a
-                key={href}
-                href={href}
-                whileHover={{ scale: 1.1 }}
-                className={`relative transition-all py-1 ${active === href ? "text-white font-medium" : "hover:text-white"}`}>
-                {label}
-                {active === href && (
-                  <motion.span
-                    layoutId="active-indicator"
-                    className="absolute -bottom-1 left-0 w-full h-[2px] 
-                    bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#a855f7] rounded-full"
-                  />
-                )}
-              </motion.a>
-            ))}
-            <a href="mailto:rehmanbaig456@gmail.com" className="ml-4 px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full hover:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all">
-              Hire Me
-            </a>
-          </div>
-          <button className="text-white md:hidden" onClick={() => setMenuOpen(true)}>
-            <Menu size={30} />
-          </button>
-        </div>
-      </motion.nav>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: menuOpen ? 0 : "100%" }}
-        transition={{ duration: 0.4 }}
-        className="fixed top-0 right-0 w-72 h-full bg-black/90 backdrop-blur-2xl z-[999] p-8 border-l border-white/10">
-        <button onClick={() => setMenuOpen(false)} className="absolute text-white top-4 right-4">
-          <X size={30} />
-        </button>
-        <div className="mt-14 flex flex-col gap-6 text-white text-lg">
-          {navLinks.map(({ label, href }) => (
-            <motion.a
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              whileHover={{ x: 10 }}
-              className={`transition-all ${active === href ? "text-[#60a5fa] font-semibold" : "text-white/80"}`}>
-              {label}
-            </motion.a>
-          ))}
-          <a href="mailto:rehmanbaig456@gmail.com" onClick={() => setMenuOpen(false)} className="mt-4 px-6 py-3 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full shadow-lg">
-            Hire Me
-          </a>
-        </div>
-      </motion.div>
-    </>
-  );
+  return <>
+    <header className="site-header">
+      <nav className="shell navigation" aria-label="Main navigation">
+        <a href="#hero" className="wordmark" aria-label="Abdul Rehman Baig, home"><span className="logo-mark">a<span>r</span><i /></span><span className="wordmark-name">ABDUL REHMAN<span>ENGINEER & CREATIVE DEVELOPER</span></span></a>
+        <div className="nav-links">{links.map((link) => <a key={link.id} href={`#${link.id}`} className={active === link.id ? "is-active" : ""} aria-current={active === link.id ? "location" : undefined}>{link.label}</a>)}</div>
+        <a className="nav-contact" href="#contact">Let&apos;s talk <ArrowUpRight size={16} /></a>
+        <button ref={menuButton} className="menu-toggle" onClick={() => setOpen(true)} aria-label="Open navigation menu" aria-expanded={open} aria-controls="mobile-navigation"><Menu size={23} /></button>
+      </nav>
+      <motion.div className="reading-progress" style={{ scaleX: reduced ? scrollYProgress : progress }} />
+    </header>
+    <dialog ref={menuRef} className="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation" onCancel={() => setOpen(false)} onClose={() => { setOpen(false); menuButton.current?.focus(); }}>
+      <div className="mobile-menu-top"><span className="eyebrow">EXPLORE THE PORTFOLIO</span><button onClick={() => setOpen(false)} aria-label="Close navigation menu"><X /></button></div>
+      <nav aria-label="Mobile">{[...links, { label: "Tech stack", id: "tech" }, { label: "Education", id: "education" }, { label: "Services", id: "services" }].map((link, i) => <a href={`#${link.id}`} key={link.id} onClick={() => setOpen(false)}><span>0{i + 1}</span>{link.label}<ArrowUpRight size={20} /></a>)}</nav>
+      <p>Karachi, Pakistan · Open to a conversation</p>
+    </dialog>
+  </>;
 }

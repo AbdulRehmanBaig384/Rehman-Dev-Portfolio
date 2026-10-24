@@ -1,112 +1,73 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { ISourceOptions } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
-import { motion } from "framer-motion";
-const HeroSection: React.FC = () => {
-  const [init, setInit] = useState(false);
-  const [imgError, setImgError] = useState(false);
+
+import dynamic from "next/dynamic";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
+import { ArrowDown, ArrowDownRight, ArrowUpRight, Code2, Download, Github, Linkedin, Mail, Pause, Play, Terminal } from "lucide-react";
+import { SiReact, SiTypescript } from "react-icons/si";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { FloatingCard, MagneticButton } from "./animations";
+import { useMediaQuery, usePageVisible } from "../hooks/useMediaQuery";
+
+const Scene = dynamic(() => import("./three/HeroScene"), { ssr: false });
+const roles = ["Full-Stack Developer", "React Native Developer", "Creative Frontend Engineer", "Software Engineering Student"];
+
+export default function HeroSection() {
+  const ref = useRef<HTMLElement>(null);
+  const visible = useInView(ref, { margin: "100px" });
+  const pageVisible = usePageVisible();
+  const desktop = useMediaQuery("(min-width: 768px)");
+  const reduced = useReducedMotion();
+  const [paused, setPaused] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [role, setRole] = useState(0);
+  const active = visible && pageVisible && !paused && !reduced;
+  const onReady = useCallback(() => setReady(true), []);
+  const onFailure = useCallback(() => { setFailed(true); setReady(false); }, []);
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setInit(true));
-  }, []);
-  const particlesOptions: ISourceOptions = {
-    background: { color: { value: "transparent" } },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" },
-        onClick: { enable: true, mode: "push" },
-        resize:{enable: true,}
-      },
-      modes: {
-        repulse: { distance: 120, duration: 0.4 },
-        push: { quantity: 2 },
-      },},
-    particles: {
-      color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
-      links: {
-        color: "#00d4ff",
-        distance: 140,
-        enable: true,
-        opacity: 0.25,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        speed: 1.2,
-        direction: "none",
-        random: false,
-        straight: false,
-        outModes: { default: "bounce" },
-      },
-      number: { density: { enable: true, factor: 800 } as any, value: 80 },
-      opacity: { value: 0.5 },
-      shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } },
-    },
-    detectRetina: true,
-  };
-  if (!init) return null;
-  return (
-    <motion.section className="relative flex flex-col items-center justify-center h-screen overflow-hidden text-center text-white">
-      <div className="absolute inset-0 -z-20">
-        <Particles id="tsparticles" options={particlesOptions} />
-      </div>
-      <div className="absolute inset-0 -z-30 bg-gradient-to-b from-blue-950/50 via-black to-blue-950/20" />
-      <div className="side-glow left" />
-      <div className="side-glow right" />
-      <div className="z-10 px-6 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 w-full">
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="mb-4 text-5xl font-extrabold text-transparent sm:text-6xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text drop-shadow-lg">
-            Hi, I’m Abdul Rehman Baig
-          </h1>
-          <p className="max-w-2xl mx-auto md:mx-0 mb-8 text-lg leading-relaxed text-gray-300 sm:text-xl">
-            Full Stack Developer — Building modern and scalable web apps using{" "}
-            <span className="font-medium text-blue-400">
-              React, Node.js, Express, and MongoDB
-            </span>
-            .
-          </p>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <button className="glow-btn"> Hire Me</button>
-            <a
-              href="/Abdul_Rehman_Baig_Resume1.pdf"
-              download="Abdul_Rehman_Baig_Resume.pdf"
-              className="px-6 py-3 font-semibold transition duration-300 border border-blue-400 rounded-full hover:bg-blue-500/10 cursor-pointer inline-flex items-center justify-center"
-            >
-               Download Resume
-            </a>
-          </div>
+    if (!active) return;
+    const interval = setInterval(() => setRole((value) => (value + 1) % roles.length), 3600);
+    return () => clearInterval(interval);
+  }, [active]);
+  return <section id="hero" ref={ref} className="hero" aria-labelledby="hero-title" data-paused={!active}>
+    <div className="hero-grid" aria-hidden="true" />
+    <div className="hero-aura" aria-hidden="true" />
+    <div className="shell hero-main">
+      <motion.div className="hero-copy" initial={reduced ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
+        <div className="hero-eyebrow"><span className="status-dot" />CREATIVE MIND. ENGINEERING DNA.</div>
+        <p className="hero-introduction">Hi, I&apos;m <strong>Abdul Rehman Baig</strong><span className="hello-star" aria-hidden="true">✳</span></p>
+        <h1 id="hero-title">Building digital<br />experiences <span className="hero-gradient">beyond<br />the ordinary.</span></h1>
+        <div className="hero-role"><span className="role-bracket">&lt;</span><span className="sr-only">Full-Stack Developer, React Native Developer, Creative Frontend Engineer, and Software Engineering Student.</span>
+          <span className="role-window" aria-hidden="true"><AnimatePresence mode="wait" initial={false}><motion.span key={role} initial={{ y: reduced ? 0 : 12, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: reduced ? 0 : -12, opacity: 0 }} transition={{ duration: 0.25 }}>{roles[role]}</motion.span></AnimatePresence></span>
+          <span className="role-bracket">/&gt;</span>
         </div>
-
-        {/* Profile Image Column */}
-        <div className="flex-1 flex justify-center md:justify-end mb-8 md:mb-0">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-gradient-to-tr from-[#00d4ff] via-[#3b82f6] to-[#7c5cff] shadow-[0_0_30px_rgba(0,212,255,0.4)] animate-float-slow">
-            <div className="w-full h-full rounded-full overflow-hidden bg-gray-900 border-[6px] border-[#0a0a0a] relative flex items-center justify-center">
-              {!imgError ? (
-                <img 
-                  src="/profile.jpg" 
-                  alt="Abdul Rehman Baig" 
-                  className="w-full h-full object-cover"
-                  onError={() => setImgError(true)}
-                />
-              ) : (
-                <div className="text-6xl font-bold bg-gradient-to-br from-[#00d4ff] to-[#7c5cff] bg-clip-text text-transparent drop-shadow-md">
-                  AR
-                </div>
-              )}
-            </div>
-          </div>
+        <p className="hero-description">Full-Stack Software Engineer crafting scalable applications, intelligent products, and immersive digital experiences.</p>
+        <div className="hero-actions">
+          <MagneticButton href="#projects" className="button button-primary">Explore Projects <ArrowUpRight size={17} /></MagneticButton>
+          <MagneticButton href="/Abdul_Rehman_Baig_Resume1.pdf" download="Abdul_Rehman_Baig_Resume.pdf" className="button button-secondary">Download Resume <Download size={16} /></MagneticButton>
         </div>
-      </div>
-      <div className="absolute w-48 h-48 rounded-full bg-blue-500/20 blur-3xl top-10 left-10 animate-float-slow" />
-      <div className="absolute w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl bottom-10 right-10 animate-float-slower" />
-    </motion.section>
-  );
-};
-export default HeroSection;
+        <div className="hero-social-row">
+          <div className="hero-socials"><a href="https://github.com/AbdulRehmanBaig384" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in new tab)"><Github size={18} /></a><a href="https://www.linkedin.com/in/abdul-rehman-baig-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)"><Linkedin size={18} /></a><a href="mailto:rehmanbaig456@gmail.com" aria-label="Email Abdul Rehman"><Mail size={18} /></a></div>
+          <span className="social-divider" /><a className="contact-text" href="#contact">Contact me <ArrowUpRight size={14} /></a>
+        </div>
+      </motion.div>
+      <motion.div className="hero-visual" initial={reduced ? false : { opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.3, delay: 0.15 }}>
+        <div className="scene-coordinate scene-coordinate-top" aria-hidden="true"><span>01 / THE CREATIVE CORE</span><span className="tiny-cross">+</span></div>
+        <div className="scene-art" aria-hidden="true">
+          <div className={`static-sculpture ${ready && desktop && !reduced ? "sculpture-hidden" : ""}`}><div className="sculpture-ring ring-one" /><div className="sculpture-ring ring-two" /><div className="sculpture-ring ring-three" /><div className="sculpture-orbit" /><div className="sculpture-orbit orbit-two" /></div>
+          {desktop && !reduced && !failed && <div className="webgl-scene"><Scene active={Boolean(active)} onReady={onReady} onFailure={onFailure} /></div>}
+        </div>
+        <FloatingCard className="hero-code-card" delay={-1}>
+          <div className="code-card-top"><span><i /><i /><i /></span><span>developer.ts</span><Terminal size={12} /></div>
+          <div className="code-lines"><div><span className="code-purple">const</span> developer <span className="code-purple">=</span> &#123;</div><div>&nbsp; name: <span className="code-green">&apos;Abdul Rehman&apos;</span>,</div><div>&nbsp; focus: <span className="code-green">&apos;meaningful experiences&apos;</span>,</div><div>&nbsp; curiosity: <span className="code-orange">Infinity</span></div><div>&#125;;</div></div>
+        </FloatingCard>
+        <FloatingCard className="hero-tech-float react-float" delay={-2}><SiReact size={29} /><span>React</span></FloatingCard>
+        <FloatingCard className="hero-tech-float ts-float" delay={-4}><SiTypescript size={24} /><span>TypeScript</span></FloatingCard>
+        <FloatingCard className="hero-craft-card" delay={-3}><span className="craft-icon"><Code2 size={21} /></span><div><strong>Thoughtfully engineered.</strong><span>Crafted with intention.</span></div><span className="status-dot" /></FloatingCard>
+        <div className="scene-coordinate scene-coordinate-bottom"><span><span className="tiny-cross" aria-hidden="true">+</span> {ready && desktop && !reduced ? "MOVE YOUR CURSOR TO EXPLORE" : "AT THE INTERSECTION OF CODE & CREATIVITY"}</span>{desktop && !reduced && <button type="button" onClick={() => setPaused(!paused)} aria-label={paused ? "Play hero animations" : "Pause hero animations"} aria-pressed={paused}>{paused ? <Play size={13} /> : <Pause size={13} />}</button>}</div>
+      </motion.div>
+    </div>
+    <div className="shell hero-bottom"><a href="#projects" className="scroll-cue"><span className="scroll-icon"><ArrowDown size={14} /></span>SCROLL TO EXPLORE</a><p>Based in Karachi, Pakistan <span>·</span> Building for the world <ArrowDownRight size={16} /></p></div>
+    <div className="stack-strip"><div className="shell"><span className="stack-strip-label">IDEAS INTO EXPERIENCES</span><span><SiReact /> React</span><span>Next.js <span className="stack-dot">✦</span></span><span><SiTypescript /> TypeScript</span><span>Node.js <span className="stack-dot">✦</span></span><span><SiReact /> React Native</span><span>MongoDB</span></div></div>
+  </section>;
+}
