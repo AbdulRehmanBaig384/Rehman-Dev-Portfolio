@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Abdul Rehman Baig — developer portfolio
 
-## Getting Started
+An existing Next.js 16 / React 19 portfolio, redesigned with charcoal lighting, oversized typography, a chrome 3D sculpture, and alternating project reveals. TypeScript, Tailwind 4, custom CSS, and locally bundled Inter / Space Grotesk remain in use.
 
-First, run the development server:
+## Develop and validate
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```powershell
+npm.cmd install
+npm.cmd run dev
+npm.cmd run lint
+npx.cmd tsc --noEmit
+npm.cmd run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Development runs at `http://localhost:3000`. Production is statically exported to `out/` for the existing Netlify hosting configuration. Serve `out/` with a static HTTP server when checking the production artifact.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content and design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/page.tsx`: original single-page section composition.
+- `app/data/projects.ts`: seven projects, original images, and preserved repository / demo URLs.
+- `app/data/journey.ts`: education and employment content.
+- `app/globals.css`: charcoal design tokens, atmosphere, navigation, hero, and footer.
+- `app/styles/`: project, skill, and supporting section styles.
+- `app/components/animations/`: GSAP entrances and existing Motion tilt / magnetic interactions.
+- `app/components/layout/`: Lenis / ScrollTrigger integration, ambient controls, and CSS atmosphere.
+- `app/components/three/HeroScene.tsx`: lazy-loaded desktop sculpture; static artwork is available on mobile and with reduced motion.
 
-## Learn More
+Desktop smooth scrolling uses Lenis with the GSAP ticker. Touch scrolling stays native. Scroll triggers, media-query listeners, resize observers, clock intervals, and WebGL event listeners are cleaned up on unmount. The motion control pauses the ambient atmosphere and sculpture; OS reduced-motion preferences disable entrance motion and WebGL loading.
 
-To learn more about Next.js, take a look at the following resources:
+Project images have existing optimized WebP variants. Regenerate them with `node scripts/optimize-images.mjs`. Regenerate the local Open Graph image with `node scripts/create-social-preview.mjs`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The contact form retains its existing Web3Forms integration. Browser verification uses intercepted responses; it does not send real messages. HealthMate's existing image is preserved, but no undocumented project details or URLs have been added.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `docs/content-audit.md` for source provenance and `docs/redesign-plan.md` for the redesign plan.

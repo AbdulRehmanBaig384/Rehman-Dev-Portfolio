@@ -2,7 +2,7 @@
 
 import { Component, useEffect, useRef, type ReactNode } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, Float, Lightformer, Sparkles } from "@react-three/drei";
+import { Environment, Float, Lightformer } from "@react-three/drei";
 import { MathUtils, type Group, type Mesh } from "three";
 
 type HeroSceneProps = {
@@ -16,11 +16,6 @@ class SceneBoundary extends Component<{ children: ReactNode; onFailure: () => vo
   static getDerivedStateFromError() { return { failed: true }; }
   componentDidCatch() { this.props.onFailure(); }
   render() { return this.state.failed ? null : this.props.children; }
-}
-
-function Unavailable({ onFailure }: { onFailure: () => void }) {
-  useEffect(() => { onFailure(); }, [onFailure]);
-  return null;
 }
 
 function SceneLifecycle({ onReady, onFailure }: Pick<HeroSceneProps, "onReady" | "onFailure">) {
@@ -67,29 +62,28 @@ function Sculpture({ active }: { active: boolean }) {
       <Float enabled={active} speed={1.15} rotationIntensity={0.14} floatIntensity={0.3} floatingRange={[-0.13, 0.13]}>
         <mesh ref={knot} rotation={[0.35, -0.3, -0.35]}>
           <torusKnotGeometry args={[1.12, 0.33, 160, 24, 2, 3]} />
-          <meshPhysicalMaterial color="#8c5bdb" metalness={0.96} roughness={0.2} clearcoat={1} clearcoatRoughness={0.18} envMapIntensity={2.2} />
+          <meshPhysicalMaterial color="#b2b2b5" metalness={0.96} roughness={0.24} clearcoat={1} clearcoatRoughness={0.18} envMapIntensity={2.2} />
         </mesh>
       </Float>
 
       <group ref={orbit} rotation={[0, 0, -0.2]}>
         <mesh rotation={[1.12, 0.4, -0.25]}>
           <torusGeometry args={[2.18, 0.006, 6, 160]} />
-          <meshBasicMaterial color="#9e82cc" transparent opacity={0.38} depthWrite={false} />
+          <meshBasicMaterial color="#d1d1d4" transparent opacity={0.38} depthWrite={false} />
         </mesh>
         <mesh rotation={[0.9, -0.7, 0.6]}>
           <torusGeometry args={[2.03, 0.004, 6, 144]} />
-          <meshBasicMaterial color="#84a5bf" transparent opacity={0.22} depthWrite={false} />
+          <meshBasicMaterial color="#d1d1d4" transparent opacity={0.22} depthWrite={false} />
         </mesh>
         <mesh position={[1.92, 0.67, 0.14]}>
           <sphereGeometry args={[0.085, 20, 16]} />
-          <meshStandardMaterial color="#c9b5ff" metalness={0.8} roughness={0.18} envMapIntensity={2} />
+          <meshStandardMaterial color="#d1d1d4" metalness={0.8} roughness={0.18} envMapIntensity={2} />
         </mesh>
         <mesh position={[-1.67, -0.88, 0.33]}>
           <sphereGeometry args={[0.055, 16, 12]} />
-          <meshStandardMaterial color="#72d7df" emissive="#5bafbb" emissiveIntensity={0.3} metalness={0.7} roughness={0.2} />
+          <meshStandardMaterial color="#d1d1d4" emissive="#d1d1d4" emissiveIntensity={0.3} metalness={0.7} roughness={0.2} />
         </mesh>
       </group>
-      <Sparkles count={28} scale={[5, 4.3, 3]} size={1.4} speed={active ? 0.13 : 0} opacity={0.35} color="#c4b5fd" />
     </group>
   );
 }
@@ -103,18 +97,18 @@ export default function HeroScene({ active, onReady, onFailure }: HeroSceneProps
         dpr={[1, 1.5]}
         frameloop={active ? "always" : "demand"}
         gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
-        fallback={<Unavailable onFailure={onFailure} />}
+        fallback={<span>Interactive sculpture unavailable.</span>}
         style={{ width: "100%", height: "100%" }}
       >
-        <ambientLight intensity={0.35} color="#b8a2e8" />
-        <directionalLight position={[3, 4, 4]} intensity={2.6} color="#e3d7ff" />
-        <pointLight position={[-3, 0.5, 2]} intensity={12} color="#8b5cf6" distance={12} decay={2} />
-        <pointLight position={[2.4, -1.3, 1]} intensity={9} color="#83d9ed" distance={10} decay={2} />
+        <ambientLight intensity={0.35} color="#d1d1d4" />
+        <directionalLight position={[3, 4, 4]} intensity={2.6} color="#d1d1d4" />
+        <pointLight position={[-3, 0.5, 2]} intensity={12} color="#c4c4c7" distance={12} decay={2} />
+        <pointLight position={[2.4, -1.3, 1]} intensity={9} color="#ededee" distance={10} decay={2} />
         <Environment resolution={128} frames={1}>
-          <Lightformer form="rect" intensity={4} color="#ede4ff" position={[-3, 2, 3]} target={[0, 0, 0]} scale={[3, 6, 1]} />
-          <Lightformer form="rect" intensity={3} color="#a483e8" position={[4, 1, -2]} target={[0, 0, 0]} scale={[2, 5, 1]} />
-          <Lightformer form="rect" intensity={3} color="#e3e7ff" position={[0, 4, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[5, 2, 1]} />
-          <Lightformer form="rect" intensity={1.5} color="#88ccda" position={[1, -3, 2]} target={[0, 0, 0]} scale={[2, 3, 1]} />
+          <Lightformer form="rect" intensity={4} color="#d1d1d4" position={[-3, 2, 3]} target={[0, 0, 0]} scale={[3, 6, 1]} />
+          <Lightformer form="rect" intensity={3} color="#d1d1d4" position={[4, 1, -2]} target={[0, 0, 0]} scale={[2, 5, 1]} />
+          <Lightformer form="rect" intensity={3} color="#d1d1d4" position={[0, 4, 0]} rotation={[Math.PI / 2, 0, 0]} scale={[5, 2, 1]} />
+          <Lightformer form="rect" intensity={1.5} color="#d1d1d4" position={[1, -3, 2]} target={[0, 0, 0]} scale={[2, 3, 1]} />
         </Environment>
         <Sculpture active={active} />
         <SceneLifecycle onReady={onReady} onFailure={onFailure} />

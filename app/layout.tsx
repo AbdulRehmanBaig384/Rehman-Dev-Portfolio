@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Abdul Rehman Baig — Full-Stack Software Engineer", images: ["/social-preview.png"] },
   robots: { index: true, follow: true },
 };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#080914" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0D0D0F" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en"><body><ExperienceProvider>{children}</ExperienceProvider><noscript><style>{".reveal-3d,.hero-copy,.hero-visual{opacity:1!important;transform:none!important}"}</style></noscript></body></html>;
 }

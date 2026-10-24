@@ -10,7 +10,9 @@ import "../../styles/projects.css";
 
 const projectIcons = { mathani: BookOpen, postautopilot: CalendarDays, studysync: MessageCircle, shopease: ShoppingBag, "voice-todo": AudioLines, "maze-solver": Code2, portfolio: Layers3 };
 
-function ProjectPreview({ project, number }: { project: Project; number: string }) {
+const previewFiles: Record<string, string> = { mathani: "mathani", postautopilot: "postautopilot", studysync: "StudySync", shopease: "shopease", "voice-todo": "voiceTodo", "maze-solver": "virtualmaze", portfolio: "portfolio" };
+
+function ProjectPreview({ project, number, onOpen }: { project: Project; number: string; onOpen: () => void }) {
   const Icon = projectIcons[project.id as keyof typeof projectIcons];
   return (
     <TiltCard className={`project-stage project-stage-${project.id}`} style={{ "--project-accent": project.accent, "--project-glow": project.glow } as CSSProperties}>
@@ -32,10 +34,11 @@ function ProjectPreview({ project, number }: { project: Project; number: string 
       ) : (
         <div className="project-browser">
           <div className="project-browser-bar"><div className="project-browser-dots"><i /><i /><i /></div><span>{new URL(project.demo).hostname}</span><ExternalLink size={10} /></div>
-          <Image src={project.image} alt={project.imageAlt} sizes="(max-width: 767px) 90vw, (max-width: 1200px) 48vw, 600px" className="project-screenshot" />
+          <picture><source srcSet={`/projects/${previewFiles[project.id]}-640.webp 640w, /projects/${previewFiles[project.id]}.webp 1400w`} sizes="(max-width: 767px) 90vw, 54vw" type="image/webp" /><Image src={project.image} alt={project.imageAlt} sizes="(max-width: 767px) 90vw, 54vw" className="project-screenshot" /></picture>
         </div>
       )}
       <div className={`project-feature-float project-feature-${project.id}`} aria-hidden="true"><div className="project-float-icon"><Icon size={19} /></div><div><span>{project.id === "postautopilot" ? "A simpler publishing flow" : project.id === "studysync" ? "Better, together" : project.features[0]}</span><small>{project.id === "mathani" ? "MOBILE EXPERIENCE" : project.id === "maze-solver" ? "EXPLORE THE ALGORITHM" : "THOUGHTFULLY BUILT"}</small></div><Check size={14} /></div>
+      <button type="button" className="project-preview-open" onClick={onOpen} aria-label={`View project: ${project.title}`}><ArrowUpRight size={24} /></button>
       <span className="project-preview-caption">{project.id === "mathani" ? "Actual app screenshot excerpt" : "Original project screenshot"}</span>
     </TiltCard>
   );
@@ -109,7 +112,7 @@ export default function ProjectsSection() {
             {visibleProjects.map((project, index) => {
               const number = (projects.indexOf(project) + 1).toString().padStart(2, "0");
               return <motion.article key={project.id} layout={!reduceMotion ? "position" : false} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduceMotion ? 0 : 0.35 }} className={`project-showcase ${index % 2 ? "project-showcase-reverse" : ""}`} aria-labelledby={`project-title-${project.id}`}>
-                <Reveal3D direction={index % 2 ? "right" : "left"} className="project-visual-reveal"><ProjectPreview project={project} number={number} /></Reveal3D>
+                <Reveal3D direction={index % 2 ? "right" : "left"} className="project-visual-reveal" scrub><ProjectPreview project={project} number={number} onOpen={() => setSelectedProject(project)} /></Reveal3D>
                 <Reveal3D direction={index % 2 ? "left" : "right"} delay={0.12} className="project-copy-reveal">
                   <div className="project-copy" style={{ "--project-accent": project.accent } as CSSProperties}>
                     <div className="project-category"><span>{number}</span><i />{project.category}</div>
@@ -117,7 +120,7 @@ export default function ProjectsSection() {
                     <p className="project-description">{project.description}</p>
                     <div className="project-tech">{(project.tech.length ? project.tech : ["Mobile application", "Quran & audio"]).map((tech) => <span key={tech} className="tag">{tech}</span>)}</div>
                     <p className="project-engineering"><Code2 size={15} /><span>{project.focus}</span></p>
-                    <div className="project-actions"><button type="button" className="project-case-button" onClick={() => setSelectedProject(project)} aria-label={`View case study: ${project.title}`}>View Case Study<ArrowUpRight size={16} /></button><ProjectLinks project={project} /></div>
+                    <div className="project-actions"><button type="button" className="project-case-button" onClick={() => setSelectedProject(project)} aria-label={`View case study: ${project.title}`}>View Project<ArrowUpRight size={16} /></button><ProjectLinks project={project} /></div>
                   </div>
                 </Reveal3D>
               </motion.article>;

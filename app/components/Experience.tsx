@@ -35,7 +35,7 @@ export default function ExperiencePage() {
         direction:"none",
         outModes:{default:"bounce"},
       },
-      number:{density:{enable:true,factor:800}as any,value:70},
+      number:{density:{ enable: true, width: 1920, height: 1080 },value:70},
       opacity:{value:0.5},
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },

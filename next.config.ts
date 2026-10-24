@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // Enable Turbopack and disable Webpack warnings
-  turbopack: {},
+  turbopack: { root: process.cwd() },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };
     return config;

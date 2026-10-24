@@ -62,7 +62,7 @@ export default function TechStack() {
         width: 1,
       },
       move: { enable: true, speed: 1.3 },
-      number: { density: { enable: true, factor: 800 } as any, value: 60 },
+      number: { density: { enable: true, width: 1920, height: 1080 }, value: 60 },
       opacity: { value: 0.4 },
       size: { value: { min: 1, max: 3 } },
     },

@@ -7,6 +7,7 @@ import JourneySection from "./components/sections/JourneySection";
 import ServicesSection from "./components/sections/ServicesSection";
 import ContactSection from "./components/sections/ContactSection";
 import Footer from "./components/Footer";
+import CinematicTransitions from "./components/animations/CinematicTransitions";
 
 export default function Home() {
   return <>
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesSection />
       <ContactSection />
     </main>
+    <CinematicTransitions />
     <Footer />
   </>;
 }

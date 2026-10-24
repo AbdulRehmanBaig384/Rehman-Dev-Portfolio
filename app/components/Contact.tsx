@@ -77,7 +77,7 @@ export default function Contact() {
       } else {
         setSubmitStatus("error");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -123,7 +123,7 @@ export default function Contact() {
             </div>
             <h3 className="text-2xl font-bold text-white">Thank You!</h3>
             <p className="text-zinc-300 text-base max-w-md">
-              Message sent successfully! I'll get back to you soon.
+              Message sent successfully! I&apos;ll get back to you soon.
             </p>
             <button
               onClick={() => setSubmitStatus(null)}

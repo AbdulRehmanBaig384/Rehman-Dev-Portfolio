@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -139,7 +140,9 @@ export default function ProjectsPage() {
             transition={{ type: "spring", stiffness: 120, damping: 12 }}
             className="glass rounded-2xl p-6 backdrop-blur-md border-2 border-[#00d4ff]/40 hover:shadow-[0_0_30px_rgba(0,183,255,0.4)] animate-float-slow" >
             <div className="w-full h-48 rounded-xl overflow-hidden mb-4 border border-white/10">
-              <img
+              <Image
+                width={1400}
+                height={800}
                 src={p.img}
                 alt={p.title}
                 className="w-full h-full object-cover hover:scale-110 transition-all duration-500" />

@@ -64,7 +64,7 @@ const ServicesSection: React.FC = () => {
       color: { value: ["#00d4ff", "#007bff", "#7c5cff"] },
       links: { color: "#00d4ff", distance: 130, enable: true, opacity: 0.25, width: 1 },
       move: { enable: true, speed: 1.3, direction: "none", outModes: { default: "bounce" } },
-      number: { density: { enable: true, factor: 800 } as any, value: 70 },
+      number: { density: { enable: true, width: 1920, height: 1080 }, value: 70 },
       opacity: { value: 0.5 },
       shape: { type: "circle" },
       size: { value: { min: 1, max: 3 } },

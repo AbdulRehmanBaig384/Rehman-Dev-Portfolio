@@ -1,28 +1,41 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, type CSSProperties, type ReactNode, useRef } from "react";
+import { type ComponentPropsWithoutRef, type CSSProperties, type ReactNode, useEffect, useRef } from "react";
 import { motion, useInView, useMotionTemplate, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useMediaQuery, usePageVisible } from "../../hooks/useMediaQuery";
 
-type RevealProps = { children: ReactNode; direction?: "left" | "right"; delay?: number; className?: string };
+gsap.registerPlugin(ScrollTrigger);
+type RevealProps = { children: ReactNode; direction?: "left" | "right"; delay?: number; className?: string; scrub?: boolean };
 
-/** Entrance and hover transforms live on separate elements to avoid competing animation owners. */
-export function Reveal3D({ children, direction = "left", delay = 0, className = "" }: RevealProps) {
-  const reduced = useReducedMotion();
-  const desktop = useMediaQuery("(min-width: 768px)");
-  const sign = direction === "left" ? -1 : 1;
-  const distance = desktop ? 180 : 48;
-  const rotation = desktop ? 28 : 12;
-  return (
-    <motion.div className={`reveal-3d ${className}`} data-reveal={direction}
-      initial={reduced ? false : { x: sign * distance, z: desktop ? -80 : -24, rotateY: sign * rotation, rotateZ: sign * (desktop ? 4 : 2), opacity: 0, scale: desktop ? 0.88 : 0.94 }}
-      whileInView={{ x: 0, z: 0, rotateY: 0, rotateZ: 0, opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.14, margin: "0px 0px -35px 0px" }}
-      transition={{ duration: reduced ? 0 : 1.05, delay: reduced ? 0 : delay, ease: [0.16, 1, 0.3, 1] }}
-      style={{ transformPerspective: 1200, transformStyle: "preserve-3d", transformOrigin: direction === "left" ? "right center" : "left center", backfaceVisibility: "hidden" }}>
-      {children}
-    </motion.div>
-  );
+/** Entrance and hover transforms have separate owners; content is visible before hydration. */
+export function Reveal3D({ children, direction = "left", delay = 0, className = "", scrub = false }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+    const media = gsap.matchMedia();
+    media.add({ desktop: "(min-width: 900px) and (pointer: fine)", motion: "(prefers-reduced-motion: no-preference)" }, (context) => {
+      if (!context.conditions?.motion) return;
+      const desktop = context.conditions.desktop;
+      const sign = direction === "left" ? -1 : 1;
+      const scrubbing = scrub && desktop;
+      const tween = gsap.fromTo(element,
+        { x: scrub ? sign * (desktop ? 200 : 24) : 0, y: desktop ? 38 : 20, rotationY: scrub && desktop ? sign * 16 : 0, rotationX: scrub && desktop ? 5 : 0, opacity: 0, scale: scrub && desktop ? 0.94 : 1 },
+        { x: 0, y: 0, rotationY: 0, rotationX: 0, opacity: 1, scale: 1, duration: 0.95, delay: scrubbing ? 0 : delay, ease: scrubbing ? "none" : "power3.out", scrollTrigger: { trigger: element, start: "top 96%", end: "top 52%", scrub: scrubbing ? 0.7 : false, once: !scrubbing, invalidateOnRefresh: true } });
+      const image = element.querySelector(".project-screenshot");
+      if (scrubbing && image) {
+        gsap.fromTo(image, { yPercent: 1.5 }, { yPercent: -1.5, ease: "none", scrollTrigger: { trigger: element, start: "top bottom", end: "bottom top", scrub: 0.7 } });
+      }
+      // Keyboard users should never encounter a visually hidden focused control.
+      const focus = () => { tween.scrollTrigger?.kill(); tween.progress(1); };
+      element.addEventListener("focusin", focus);
+      return () => element.removeEventListener("focusin", focus);
+    });
+    return () => media.revert();
+  }, [direction, delay, scrub]);
+  return <div ref={ref} className={`reveal-3d ${className}`} data-reveal={direction} style={{ perspective: 1200, transformStyle: "preserve-3d" }}>{children}</div>;
 }
 
 export function TiltCard({ children, className = "", style }: { children: ReactNode; className?: string; style?: CSSProperties }) {
@@ -34,7 +47,7 @@ export function TiltCard({ children, className = "", style }: { children: ReactN
   const lightY = useMotionValue(50);
   const rotateX = useSpring(x, { stiffness: 160, damping: 24 });
   const rotateY = useSpring(y, { stiffness: 160, damping: 24 });
-  const glow = useMotionTemplate`radial-gradient(440px circle at ${lightX}% ${lightY}%, rgba(167,139,250,.10), transparent 65%)`;
+  const glow = useMotionTemplate`radial-gradient(440px circle at ${lightX}% ${lightY}%, rgba(225,225,225,.08), transparent 65%)`;
   const shadowX = useTransform(rotateY, [-7, 7], [14, -14]);
   const shadowY = useTransform(rotateX, [-7, 7], [18, 38]);
   const boxShadow = useMotionTemplate`${shadowX}px ${shadowY}px 65px -30px rgba(0,0,0,.65)`;

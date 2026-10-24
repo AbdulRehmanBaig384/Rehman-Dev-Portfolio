@@ -11,7 +11,7 @@ export default function IntroScreen({ onFinish }: { onFinish: () => void }) {
     onFinish();
    }, 7500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [onFinish]);
   if (!show) return null;
   return (
     <motion.div
