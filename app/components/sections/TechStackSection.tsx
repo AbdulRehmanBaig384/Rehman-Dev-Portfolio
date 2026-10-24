@@ -87,22 +87,24 @@ export default function TechStackSection() {
                   } as CSSProperties;
                   return (
                     <div key={item.name} className="tech-node-position" style={style}>
-                      <TiltCard>
-                        <button
-                          ref={(element) => { buttonRefs.current[index] = element; }}
-                          type="button"
-                          className={`tech-node${selected === index ? " is-selected" : ""}`}
-                          aria-pressed={selected === index}
-                          aria-controls="technology-detail"
-                          onMouseEnter={() => setSelected(index)}
-                          onFocus={() => setSelected(index)}
-                          onClick={() => setSelected(index)}
-                          onKeyDown={(event) => navigate(event, index)}
-                        >
-                          <Icon aria-hidden="true" size={24} />
-                          <span>{item.name}</span>
-                        </button>
-                      </TiltCard>
+                      <Reveal3D direction={index % 2 === 0 ? "left" : "right"} delay={(index % 2) * 0.08}>
+                        <TiltCard>
+                          <button
+                            ref={(element) => { buttonRefs.current[index] = element; }}
+                            type="button"
+                            className={`tech-node${selected === index ? " is-selected" : ""}`}
+                            aria-pressed={selected === index}
+                            aria-controls="technology-detail"
+                            onMouseEnter={() => setSelected(index)}
+                            onFocus={() => setSelected(index)}
+                            onClick={() => setSelected(index)}
+                            onKeyDown={(event) => navigate(event, index)}
+                          >
+                            <Icon aria-hidden="true" size={24} />
+                            <span>{item.name}</span>
+                          </button>
+                        </TiltCard>
+                      </Reveal3D>
                     </div>
                   );
                 })}

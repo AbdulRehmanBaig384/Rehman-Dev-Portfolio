@@ -11,13 +11,15 @@ export function Reveal3D({ children, direction = "left", delay = 0, className = 
   const reduced = useReducedMotion();
   const desktop = useMediaQuery("(min-width: 768px)");
   const sign = direction === "left" ? -1 : 1;
+  const distance = desktop ? 180 : 48;
+  const rotation = desktop ? 28 : 12;
   return (
     <motion.div className={`reveal-3d ${className}`} data-reveal={direction}
-      initial={reduced ? false : { x: sign * (desktop ? 180 : 30), rotateY: sign * (desktop ? 28 : 5), rotateZ: sign * (desktop ? 4 : 0), opacity: 0, scale: desktop ? 0.88 : 0.98 }}
-      whileInView={{ x: 0, rotateY: 0, rotateZ: 0, opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.12, margin: "0px 0px -25px 0px" }}
-      transition={{ duration: reduced ? 0 : 0.95, delay: reduced ? 0 : delay, ease: [0.16, 1, 0.3, 1] }}
-      style={{ transformPerspective: 1200, transformStyle: "preserve-3d" }}>
+      initial={reduced ? false : { x: sign * distance, z: desktop ? -80 : -24, rotateY: sign * rotation, rotateZ: sign * (desktop ? 4 : 2), opacity: 0, scale: desktop ? 0.88 : 0.94 }}
+      whileInView={{ x: 0, z: 0, rotateY: 0, rotateZ: 0, opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.14, margin: "0px 0px -35px 0px" }}
+      transition={{ duration: reduced ? 0 : 1.05, delay: reduced ? 0 : delay, ease: [0.16, 1, 0.3, 1] }}
+      style={{ transformPerspective: 1200, transformStyle: "preserve-3d", transformOrigin: direction === "left" ? "right center" : "left center", backfaceVisibility: "hidden" }}>
       {children}
     </motion.div>
   );
