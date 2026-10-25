@@ -14,7 +14,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="section about-section">
       <div className="shell">
-        <AnimatedSectionHeading number="02" eyebrow="A LITTLE ABOUT ME" title="An engineer’s mind. A builder’s heart." />
+        <AnimatedSectionHeading number="01" eyebrow="A LITTLE ABOUT ME" title="An engineer’s mind. A builder’s heart." />
         <div className="about-layout">
           <Reveal3D direction="left" className="about-art-wrap">
             <TiltCard className="about-art">

@@ -105,7 +105,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section projects-section" aria-labelledby="projects-heading">
       <div className="shell">
-        <div className="projects-heading-row"><div id="projects-heading"><AnimatedSectionHeading number="01" eyebrow="SELECTED WORK" title="Ideas, brought to life." description="A selection of things I’ve built. Real problems, thoughtful solutions, and a little creative ambition." /></div><a href="https://github.com/AbdulRehmanBaig384" target="_blank" rel="noopener noreferrer" className="projects-all-link">More on GitHub<ArrowUpRight size={17} /></a></div>
+        <div className="projects-heading-row"><div id="projects-heading"><AnimatedSectionHeading number="02" eyebrow="SELECTED WORK" title="Ideas, brought to life." description="A selection of things I’ve built. Real problems, thoughtful solutions, and a little creative ambition." /></div><a href="https://github.com/AbdulRehmanBaig384" target="_blank" rel="noopener noreferrer" className="projects-all-link">More on GitHub<ArrowUpRight size={17} /></a></div>
         <div className="project-filter-row"><div className="project-filters" role="group" aria-label="Filter projects by category">{projectFilters.map((item) => <button type="button" className={`project-filter ${filter === item ? "is-active" : ""}`} aria-pressed={filter === item} key={item} onClick={() => setFilter(item)}>{item}{item === "All Projects" && <span>{projects.length.toString().padStart(2, "0")}</span>}</button>)}</div><span className="project-result-count" aria-live="polite">{visibleProjects.length} projects <ArrowDown size={14} /></span></div>
         <div className="projects-list">
           <AnimatePresence initial={false} mode="popLayout">

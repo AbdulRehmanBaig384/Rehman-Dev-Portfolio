@@ -1,10 +1,9 @@
 "use client";
 import { MotionConfig } from "framer-motion";
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, type ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { Pause, Play } from "lucide-react";
 import Atmosphere from "./Atmosphere";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
@@ -13,7 +12,6 @@ const AmbientContext = createContext(true);
 export const useAmbientMotion = () => useContext(AmbientContext);
 
 export default function ExperienceProvider({ children }: { children: ReactNode }) {
-  const [paused, setPaused] = useState(false);
   const reduced = useMediaQuery("(prefers-reduced-motion: reduce)");
   useEffect(() => {
     const media = gsap.matchMedia();
@@ -40,10 +38,9 @@ export default function ExperienceProvider({ children }: { children: ReactNode }
     resize.observe(document.body);
     return () => { media.revert(); resize.disconnect(); cancelAnimationFrame(frame); };
   }, []);
-  return <MotionConfig reducedMotion="user"><AmbientContext.Provider value={!paused && !reduced}>
-    <div className="portfolio-experience" data-motion-paused={paused || reduced}>
+  return <MotionConfig reducedMotion="user"><AmbientContext.Provider value={!reduced}>
+    <div className="portfolio-experience" data-motion-paused={reduced}>
       <Atmosphere />{children}
-      {!reduced && <button type="button" className="motion-toggle" onClick={() => setPaused(!paused)} aria-pressed={paused} aria-label={paused ? "Resume ambient animation" : "Pause ambient animation"} title={paused ? "Resume atmosphere" : "Pause atmosphere"}>{paused ? <Play size={13} /> : <Pause size={13} />}<span>Motion {paused ? "off" : "on"}</span></button>}
     </div>
   </AmbientContext.Provider></MotionConfig>;
 }
